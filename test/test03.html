@@ -1,11 +1,87 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>화면구현test2</title>
+    <style>
+        /* font */
+        @font-face {
+            font-family: 'S-CoreDream-8Heavy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background: #1e88e5;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1200px;
+            height: 1600px;
+            font-size: 72px;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0 auto;
+            font-family: 'S-CoreDream-8Heavy';
+        }
+
+        #header {
+            width: 800px;
+            height: 400px;
+            background: #e3f2fd;
+            line-height: 400px;
+            float: right;
+        }
+
+        #side {
+            width: 400px;
+            height: 1600px;
+            background: #bbdefb;
+            line-height: 1600px;
+            float: left;
+        }
+
+        #contents {
+            width: 800px;
+            height: 800px;
+            background: #90caf9;
+            float: left;
+            line-height: 800px;
+        }
+
+        #footer {
+            width: 800px;
+            height: 400px;
+            background: #64b5f6;
+            float: left;
+            line-height: 400px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="wrap">
+        <div id="header">header</div>
+        <!-- //header -->
+        <div id="side">side</div>
+        <!-- //side -->
+        <div id="contents">contents</div>
+        <!-- //contents -->
+        <div id="footer">footer</div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
 </body>
+
 </html>
