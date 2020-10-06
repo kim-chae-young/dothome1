@@ -20,6 +20,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+/* 블릿 기호 초기화 */
+ul, li ,ol, dl, menu{list-style:none;}
+
 /* IR효과 */
 .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; 
     text-indent: -9999px;}
