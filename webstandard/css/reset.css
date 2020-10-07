@@ -23,6 +23,9 @@ h1, h2, h3, h4, h5, h6 {
 /* 블릿 기호 초기화 */
 ul, li ,ol, dl, menu{list-style:none;}
 
+/* 이미지초기화 */
+img {vertical-align: top;}  /*이미지 여백 제거*/
+
 /* IR효과 */
 .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; 
     text-indent: -9999px;}
