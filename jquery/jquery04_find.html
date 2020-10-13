@@ -12,7 +12,7 @@
             font-style: normal;
         }
         .section {
-            width: 700px; margin: 50px auto; font-family: 'TmoneyRoundWindExtraBold';
+            width: 700px; margin: 50px auto; font-family: 'TmoneyRoundWindExtraBold'; text-align: center;
         }
         .section h1 {font-size: 40px;}
         .section p {font-size: 30px;}
@@ -52,16 +52,16 @@
        
 
         //글자 쪼갬
-        // let text = $(".desc").text().split(" ").join("</span><span>");
-        //     text = "<span>" + text +"</span>";
+        let text = $(".desc").text().split(" ").join("</span><span>");
+        text = "<span>" + text +"</span>";
         // $(".desc").html(text).find("span").mouseover(function(){
         //     $(this).css({color:"#c7254e", backgroundColor: "#f9f2f4", borderRadius:"5px"});
 
             $(".desc").html(text).find("span").hover(function(){
                 $(this) .css({color:"#c7254e", backgroundColor:"#f9f2f4", borderRadius:"5px"});
-            },function(){
+            }, function(){
                 $(this) .css({color:"#000000", backgroundColor:"transparent"});
-        
+            });
          </script>   
 </body>
 </html>
