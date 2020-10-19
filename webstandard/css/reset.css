@@ -27,8 +27,10 @@ ul, li ,ol, dl, menu{list-style:none;}
 img {vertical-align: top;}  /*이미지 여백 제거*/
 
 /* font style 초기화 */
-em {font-style: normal;}
+em, address {font-style: normal;}
 
+/* 보더초기화 */
+fieldset {border: 0;}
 /* IR효과 */
 .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; 
     text-indent: -9999px;}
