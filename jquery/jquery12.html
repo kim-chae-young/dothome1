@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //내이름은 채영 직업은 퍼블리셔
+        document.write("내이름은 채영 직업은 퍼블리셔","<br>");
+        document.write("내직업은 웹","<br>","<br>");
+
+        //매개변수가 함수로출력
+        function fun1(name, job){
+            document.write("내이름은"+name+"이며,"+job+"입니다.","<br>");
+            document.write("퍼블리셔","<br>","<br>");
+        }
+        fun1("채영","퍼블리셔");
+        
+        // 변수선언하고 함수로 출력
+        function fun2(name,job){
+            document.write("내이름은"+name+"이며,"+job+"직업은입니다.","<br>","<br>");
+        }
+        let youname1="chaeyoung";
+        let youjob1="퍼블리셔";
+        let youname2="김채영"
+        let youjob2="자기소개"
+        
+        fun2(youname1,youjob1);
+        fun2(youname2,youjob2);
+
+        //객체를 선언하고 함수로 출력
+        function fun3(name, job){
+            document.write("내이름은"+name+"이며","내일"+job+"할예정이다","<br>","<br>");
+        }
+        const you=[
+            {
+                name:"채영", job:"웹"
+            },
+            {
+                name:"김채영",
+                job: "웹"
+            }
+        ];
+        fun3(you[0].name, you[0].job);
+        fun3(you[1].name, you[1].job);
+
+        // 객체+메서드
+        const you2 = {
+            name1:"채영",
+            job1:"웹",
+            name2:"김채영",
+            job2:"웹디",
+            study1:function(){
+                document.write("내이름은"+this.name1+"이며,내 직업은"+this.job1+"입니다.","<br>");
+            },
+            study2:function(){
+                document.write("내이름은"+this.name2+"이며,내일"+this.job2+"입니다.","<br>","<br>");
+            }
+        }
+        you2.study1();
+        you2.study2();
+
+        // 객체 생성자함수(함수+인스턴스 객체)
+        function You3(name, job){
+            this.name=name;
+            this.job=job;
+            this.study = function(){
+                document.write("내이름은"+this.name+"이며,내일"+this.job+"입니다.","<br>","<br>");
+            }
+        }
+        let char1=new You3("채영","웹");
+        let char2=new You3("김채영","웹디");
+
+        // 프로토타입 메서드
+        function You4(name, job){
+            this.name = name;
+            this.job=job;
+        }
+        You4.prototype.study=function(){
+            document.write("내이름은"+this.name+"이며,내일"+this.job+"입니다.","<br>");
+        }
+
+        let char3= new You4("채영","웹");
+        let char4 = new You4("김채영","웹디");
+
+        // 객체 리터럴
+        function You5(name, job){
+            this.name = name;
+            this.job = job;
+        }
+        You5.prototype = {
+            study1 : function(){
+                document.write("내이름은"+this.name+"이며,내일"+this.job+"입니다.","<br>");
+            },
+            study2 : function(){
+                document.write("내이름은"+this.name+"이며,내일"+this.job+"입니다.","<br>");
+            }
+        }
+        let char5= new You5("채영","웹");
+        let char6 = new You5("김채영","웹디");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
