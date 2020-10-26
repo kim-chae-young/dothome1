@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {}
+        .container {margin: 0 auto; width: 100%;}
+        header {width: 100%; height: 200px; background: rgb(80, 207, 154);}
+        aside {width: 30%; height: 700px; background: rgb(42, 202, 77); float: left;}
+        section {width: 40%; height: 700px; background: rgb(94, 194, 135); float: left;}
+        article {width: 30%; height: 700px; background: rgb(23, 216, 55); float: left;}
+        footer {width: 100%; height: 150px; background: rgb(31, 158, 74); clear: both;}
+
+        /* 1280 */
+        @media (max-width: 1280px){   
+            section {width: 70%;}  
+            article {width: 100%; height: 300px;}    
+        }
+
+        @media (max-width: 900px){   
+            aside {width: 100%;}  
+            section {width: 100%;}    
+        }
+
+        @media (max-width: 480px){   
+            aside {height: 300px;}  
+            section {height: 300px;}    
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <section></section>
+            <article></article>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
