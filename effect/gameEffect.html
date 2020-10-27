@@ -73,7 +73,7 @@
     </header>
     <div class="bs-header bgs5" id="content">
         <div class="container">
-            <h1>gameeffect Reference v1.0 &lt;/doc&gt;</h1>
+            <h1>game effect Reference v1.0 &lt;/doc&gt;</h1>
             <p><a href="https://cheyoung12.dothome.co.kr" target="_blank">cheyoung12.dothome.co.kr</a></p>
         </div>
     </div>
@@ -87,27 +87,86 @@
                     </script>
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">클리핑 마스크</h2>
-                    <p class="bs-callout bs-callout-info">클리핑 마스크는 레이어 마스크와 달리 상위 레이어의 이미지를 하위 레이어에 클리핑하여 레이어의 모양으로 잘라낸 것처럼 나타내는 기능입니다.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample01.jpg">
-                            </a>
+                    <h2 id="intro2" class="page-header">Quiz1</h2>
+                    <p class="bs-callout bs-callout-info">주관식 1문제 스타일(자바스크립트/제이쿼리)</p>   
+                    <div class="codepen">
+                        <p class="codepen" data-height="700" data-theme-id="light" data-default-tab="css,result" data-user="chaeyoung2589" data-slug-hash="gOMmwoY" style="height: 700px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Quiz  Project1">
+                        <span>See the Pen <a href="https://codepen.io/chaeyoung2589/pen/gOMmwoY">
+                        Quiz  Project1</a> by kimchaeyoung (<a href="https://codepen.io/chaeyoung2589">@chaeyoung2589</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                        </p>
+                        <script async src="https://static.codepen.io/assets/embed/ei.js"></script> 
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascriptSource</h3>
+<pre class="line numbers languges-javascript">
+    const quizAsk = "태그 중에서 유일하게 블록 구조를 감쌀수 있는 태그는?";
+    const question = document.querySelector(".question");
+    //const question = $(".question");
+    const questionNum = document.querySelector(".num");
+    const questionBtn = document.querySelector(".confirm-btn");
+    const questionAnswer = document.querySelector(".confirm-answer");
+    const questionEx = document.querySelector(".confirm-ex");
+    
+    //문제번호출력
+    questionAnswer.innerHTML = quizAnswer;
+    question.innerText = quizAsk;
+    questionNum.innerText = quizNum;
+    questionEx.innerHTML =quizEx;
+    
+    //숨기기
+    questionAnswer.style.display = "none";
+    questionEx.style.display = "none";
+    //정답확인
+    
+    //버튼 클릭, 숨기기, 보여주기
+    questionBtn.addEventListener("click",function(){
+        questionBtn.style.display = "none"
+        questionAnswer.style.display = "block";
+        questionEx.style.display = "block";
+    });<code>
+
+</code></pre>
                         </div>
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample02.jpg">
-                            </a>
-                        </div>
-                    </div>
+                        <div class="jquerySource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line numbers languges-jquery">
+    const quizAsk = "태그 중에서 유일하게 블록 구조를 감쌀수 있는 태그는?";
+    const quizNum = "1";
+    const quizAnswer = "&lt;a&gt;";
+    const quizEx = "HTML5에서 &lt;a&gt; 태그는 유일하게 블록 구조를 감쌀 수 있습니다.";
+    //선택자
+    const question = $(".question");
+    //const question = $(".question");
+    const questionNum = $(".num");
+    const questionBtn = $(".confirm-btn");
+    const questionAnswer = $(".confirm-answer");
+    const questionEx = $(".confirm-ex");
+    //문제출력
+    questionNum.text(quizNum);
+    question.text(quizAsk);
+    questionAnswer.text(quizAnswer);
+    questionEx.text(quizEx);
+    
+    //정답숨기기
+    questionAnswer.hide();
+    questionEx.hide();
+    
+    //정답확인
+    questionBtn.click(function(){
+        questionBtn.hide();
+        questionAnswer.show();
+        questionEx.show();
+    });<code>
+
+</code></pre>
+                        </div> 
+                    </div>                                    
                 </div>
                 <!-- //Intro1 -->
                 <!-- Intro2 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">레이어 마스크</h2>
-                    <p class="bs-callout bs-callout-info">레이어 마스크는 선택 영역 모양으로 이미지를 오린 듯한 결과를 만들면서 원본 레이어를 보호하는 기능이며, 알파 채널은 선택 영역을 계속해서 사용할 수 있도록 
-                        회색 음영 이미지로 저장해 두는 기능입니다. </p>
+                    <h2 id="intro2" class="page-header">Quiz2</h2>
+                    <p class="bs-callout bs-callout-info">주관식3문제 이상스타일 자바스크립트</p>
                     <div class="row">
                         <div class="col-xs-6 col-md-3">
                             <a href="#" class="thumbnail">
