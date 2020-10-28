@@ -1,0 +1,20 @@
+/* 레이아웃 */
+#header {background: url(../img/header_bg.jpg) repeat-x center top; height: 327px;}
+/* container */
+.container {width: 1200px; margin:0 auto; background: rgba(0,0,0,0.3);}
+/* header */
+.header {}
+.header .header_menu {text-align: right;}
+.header .header_menu a {color: #fff; transition: color 0.3s; padding: 8px 0 6px 10px; display: inline-block; font-family: "Abel";}
+.header .header_menu a:hover {color: #ccc;}
+.header .header_tit {text-align: center; font-family: "Abel"; margin-top: 55px; text-transform: uppercase;} 
+.header .header_tit h1 {border: 1px; background-color: #51b0dc; padding: 5px 30px; display: inline-block; letter-spacing: 2px; 
+    font-weight: 900;  color: #fff;}
+.header .header_tit h1:hover {background-color: ;}
+.header .header_tit a {color: #fff; font-size: 18px; background-color: #4a9abf; padding: 10px 20px; margin-top: -7px; display: inline-block;}
+.header .header_icon
+
+/* 미디어쿼리 */
+@media (max-width:1220px){
+    .container {width: 100%;}
+}
