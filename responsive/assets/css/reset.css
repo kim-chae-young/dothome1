@@ -1,6 +1,6 @@
 /* 여백초기화 */
 body, div, ul, li, dd, dt, dl, h1, h2, h3, h4, h5, h6, input, fieldset, p, select, table, td, tr, textarea, button, 
-form {margin: 0; padding: 0;
+form, ol {margin: 0; padding: 0;
 }
 /* a 링크 초기화 */
 a {color: #222; text-decoration: none;}
@@ -11,7 +11,7 @@ body, input, textarea, select, button, table {font-family: "Nanum Goghic",AppleS
     '맑은 고딕',dotum,'돋움',sans-serif; color: #222; font-size: 13px; line-height: 1.5;
     color:#222; font-size: 13px; line-height: 1.3;}
 /* 블릿기호 초기화 */
-ul {list-style: none;}
+ul, ol {list-style: none;}
 
 /* IR효과 */
 .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0; 
