@@ -70,12 +70,12 @@ article {background-color: #eaf7fd;}
 .nav div:last-child li {width: 100%;}
 
 /* 버튼 */
-.article {position: relative;}
-.article h2 {
+.title {position: relative;}
+.title h2 {
     text-align: center;     
     font-size: 40px; color: #2c94c4; 
     font-family: 'Nanum Brush Script';
     
 }
-.article .btn {position: absolute; right: 0%; top: -10%; font-size: 50px; color:#2698cb; transition: all 0.3s;}
-.article .btn:hover {box-shadow: 15px 0 0 0 inset, -15px 0 0 0 inset;}
+.title .btn {position: absolute; right: 0%; top: -10%; font-size: 50px; color:#2698cb; transition: all 0.3s;}
+.title .btn:hover {box-shadow: 15px 0 0 0 inset, -15px 0 0 0 inset;}

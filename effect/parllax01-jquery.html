@@ -19,7 +19,23 @@
         }
         a {text-decoration: none; transition: all 0.2s;}
         img {width: 100%; vertical-align: top;} /*여백초기화*/
+        ul {list-style: none;}
 
+        /* info */
+        .info {position: fixed; z-index: 1000;}
+        .info.left {left: 20px; top: 20px;}
+        .info.right {right: 20px; top: 20px;}
+        .info.bottom {right: 20px; bottom: 20px;}
+        .info h1 {font-size: 2rem; line-height: 1.4;}
+        .info p {font-size: 1rem;}
+        .info li {font-size: 1rem; line-height: 1.4;}
+        .info li a {color: #fff; width: 25px; height: 25px; border: 1px dashed #fff; display: inline-block; border-radius: 50%; text-align: center;
+            line-height: 25px; font-size: 0.8rem; margin: 5px;}
+        .info li a.active {background: #fff; color: #000;}
+
+        @media (max-width: 800px) {
+            .info h1 {display: none;}
+        }
         /* main */
         body {
             --color-h1 : #dc6e25;
@@ -72,13 +88,74 @@
         .content-item:nth-child(even) .content-item-desc {
             text-align: left; margin-right: auto; margin-left: -4vw; padding-left: 0; padding-right: 10vw;
         }
-        
+        .contents > section {
+            opacity: 0;
+            transform: translateX(200px);
+            transition:  all 1s;
+        }
+        .contents > section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        /* 개별적으로 나타나기 */
+        .contents > section .content-item-num {
+            opacity: 0.7; transition: all 1s 0.1s cubic-bezier(0.08, 0.57, 0.58, 1);
+            transform: translateY(200px);
+        }        
+        .contents > section .content-item-title {
+            opacity: 0; transition: all 1s 0.3s cubic-bezier(0.08, 0.57, 0.58, 1);
+            transform: translateX(-200px);
+        }
+        .contents > section .content-item-imgWrap {
+            opacity: 0; transition: all 1s 0.6s cubic-bezier(0.08, 0.57, 0.58, 1);
+            transform: translateY(200px);
+        } 
+        .contents > section .content-item-desc {
+            opacity: 0; transition: all 1s 0.9s cubic-bezier(0.08, 0.57, 0.58, 1);
+            transform: translateX(-200px);
+        }
 
-            
+        .contents > section.show .content-item-num {opacity: 1; transform: translateY(0);}
+        .contents > section.show .content-item-title {opacity: 1; transform: translateX(0);}
+        .contents > section.show .content-item-imgWrap {opacity: 1; transform: translateY(0);}
+        .contents > section.show .content-item-desc {opacity: 1; transform: translateX(0);}
     </style>
 </head>
 <body>
+    <div class="info left">
+        <h1>Parallax Effect01-jQuery</h1>
+        <p>패럴럭스 스크로링 효과-기본</p>
+    </div>
+    <div class="info right">
+        <ul>
+            <li><a href="parllax01-jquery.html" class="active">1</a><a href="parllax01-javascript.html">1</a></li>
+            <li><a href="parllax02-jquery.html">2</a><a href="parllax02-javascript.html">2</a></li>
+            <li><a href="parllax03-jquery.html">3</a><a href="parllax03-javascript.html">3</a></li>
+            <li><a href="parllax04-jquery.html">4</a><a href="parllax04-javascript.html">4</a></li>
+            <li><a href="parllax05-jquery.html">5</a><a href="parllax05-javascript.html">5</a></li>
+            <li><a href="parllax06-jquery.html">6</a><a href="parllax06-javascript.html">6</a></li>
+            <li><a href="parllax07-jquery.html">7</a><a href="parllax07-javascript.html">7</a></li>
+            <li><a href="parllax08-jquery.html">8</a><a href="parllax08-javascript.html">8</a></li>
+            <li><a href="parllax09-jquery.html">9</a><a href="parllax09-javascript.html">9</a></li>            
+        </ul>
+    </div>
+    <div class="info bottom">
+        <ul>
+            <li>scrollTop() : <span class="scrollTop">0</span>px</li>
+            <li>#section1 : <span class="s1OffsetTop">0</span>px</li>
+            <li>#section2 : <span class="s2OffsetTop">0</span>px</li>
+            <li>#section3 : <span class="s3OffsetTop">0</span>px</li>
+            <li>#section4 : <span class="s4OffsetTop">0</span>px</li>
+            <li>#section5 : <span class="s5OffsetTop">0</span>px</li>
+            <li>#section6 : <span class="s6OffsetTop">0</span>px</li>
+            <li>#section7 : <span class="s7OffsetTop">0</span>px</li>
+            <li>#section8 : <span class="s8OffsetTop">0</span>px</li>
+            <li>#section9 : <span class="s9OffsetTop">0</span>px</li>
+        </ul>
+    </div>
+    <!-- info -->
+
     <main>
         <section id="parallax-wrap">
             <h1>parllax <em>Scrolling</em></h1>
@@ -89,7 +166,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>                                          
                     </figure>
-                    <p class="content-item-desc">당신의 능력은 오늘의 당신의 행동에 의해 꽃이 피기를 기다리고 있습니다.</p>
+                    <p class="content-item-desc">당신의 능력은 오늘의 당신의 행동에 의해 꽃이 피기를 기다리고</p>
                 </section>
 
                 <section id="section2" class="content-item">
@@ -138,7 +215,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>                                          
                     </figure>
-                    <p class="content-item-desc">사람들은 맹인으로 태어난 것보다 더 불행한 것이 뭐냐고 나에게 물어온다.</p>
+                    <p class="content-item-desc">사람들은 맹인으로 태어난 것보다 더 불행한 것이 뭐냐고 </p>
                 </section>
                 <section id="section8" class="content-item">
                     <span class="content-item-num">08</span>
@@ -146,7 +223,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>                                          
                     </figure>
-                    <p class="content-item-desc">누군가의 인생이든 절정기가 있게 마련이고 그 절정기의 대부분은 누군가의 격려를 통해 찾아온다.</p>
+                    <p class="content-item-desc">누군가의 인생이든 절정기가 있게 마련이고 그 절정기의 </p>
                 </section>
                 <section id="section9" class="content-item">
                     <span class="content-item-num">09</span>
@@ -154,20 +231,115 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>                                          
                     </figure>
-                    <p class="content-item-desc">햇빛은 달콤하고 비는 상쾌하고 바람은 시원하며 눈은 기분을 들뜨게 만든다.</p>
-                </section>
-                <section id="section2" class="content-item"></section>
-                <section id="section3" class="content-item"></section>
-                <section id="section4" class="content-item"></section>
-                <section id="section5" class="content-item"></section>
-                <section id="section6" class="content-item"></section>
-                <section id="section7" class="content-item"></section>
-                <section id="section8" class="content-item"></section>
-                <section id="section9" class="content-item"></section>
+                    <p class="content-item-desc">햇빛은 달콤하고 비는 상쾌하고 바람은 시원하며 눈은 기분을</p>
+                </section>             
             </div>
         </section>
     </main>
-    
+    <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // h1 클릭red
+        /*$("h1").click(function(){
+            $("*").css("color","red");
+        });
+        $("h1").click(function(){
+           alert($("h1").text());
+        });*/
+        $(window).scroll(function(){
+           const scrollTop = $(window).scrollTop() + $(window).height();
+           
+            $(".scrollTop").text(scrollTop);
+            $(".s1OffsetTop").text(parseInt($("#section1").offset().top));
+            $(".s2OffsetTop").text(parseInt($("#section2").offset().top));
+            $(".s3OffsetTop").text(parseInt($("#section3").offset().top));
+            $(".s4OffsetTop").text(parseInt($("#section4").offset().top));
+            $(".s5OffsetTop").text(parseInt($("#section5").offset().top));
+            $(".s6OffsetTop").text(parseInt($("#section6").offset().top));
+            $(".s7OffsetTop").text(parseInt($("#section7").offset().top));
+            $(".s8OffsetTop").text(parseInt($("#section8").offset().top));
+            $(".s9OffsetTop").text(parseInt($("#section9").offset().top));
+
+            // for문
+                if(scrollTop > $("#section1").offset().top){
+                    $(".s1OffsetTop").css("color","red");
+                } else {
+                    $(".s1OffsetTop").css("color","white");
+                }
+
+                if(scrollTop > $("#section2").offset().top){
+                    $(".s2OffsetTop").css("color","red");
+                } else {
+                    $(".s2OffsetTop").css("color","white");
+                }
+
+                if(scrollTop > $("#section3").offset().top){
+                    $(".s3OffsetTop").css("color","red");
+                } else {
+                    $(".s3OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section4").offset().top){
+                    $(".s4OffsetTop").css("color","red");
+                } else {
+                    $(".s4OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section5").offset().top){
+                    $(".s5OffsetTop").css("color","red");
+                } else {
+                    $(".s5OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section6").offset().top){
+                    $(".s6OffsetTop").css("color","red");
+                } else {
+                    $(".s6OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section7").offset().top){
+                    $(".s7OffsetTop").css("color","red");
+                } else {
+                    $(".s7OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section8").offset().top){
+                    $(".s8OffsetTop").css("color","red");
+                } else {
+                    $(".s18OffsetTop").css("color","white");
+                }
+                if(scrollTop > $("#section9").offset().top){
+                    $(".s9OffsetTop").css("color","red");
+                } else {
+                    $(".s9OffsetTop").css("color","white");
+                }
+                
+                // 나타나기
+                if(scrollTop > $("#section1").offset().top){
+                    $("#section1").addClass("show");
+                }
+                if(scrollTop > $("#section2").offset().top){
+                    $("#section2").addClass("show");
+                }
+                if(scrollTop > $("#section3").offset().top){
+                    $("#section3").addClass("show");
+                }
+                if(scrollTop > $("#section4").offset().top){
+                    $("#section4").addClass("show");
+                }
+                if(scrollTop > $("#section5").offset().top){
+                    $("#section5").addClass("show");
+                }
+                if(scrollTop > $("#section6").offset().top){
+                    $("#section6").addClass("show");
+                }
+                if(scrollTop > $("#section7").offset().top){
+                    $("#section7").addClass("show");
+                }
+                if(scrollTop > $("#section8").offset().top){
+                    $("#section8").addClass("show");
+                }
+                if(scrollTop > $("#section9").offset().top){
+                    $("#section9").addClass("show");
+                }
+        });
+        
+        // each
+    </script>
 </body>
 </html>
