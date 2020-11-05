@@ -364,34 +364,32 @@
             // }
 
                 // 숫자 for문
-            // $(window).scroll(function(){
-            //     const scrollTop = $(window).scrollTop() + $(window).height();
-          
-            // for(let i=1; i<10; i++){
-            //     if(scrollTop > $("#section"+i).offset().top) {
-            //         $(".s" +i+ "OffsetTop").css("color","red");
-            //     } else {
-            //        $(".s" +i+ "OffsetTop").css("color","white");
-            //     }
-
-            // }
+            $(window).scroll(function(){
+            const scrollTop = $(window).scrollTop() + $(window).height();          
+                for(let i=1; i<10; i++){
+                    if(scrollTop > $("#section"+i).offset().top) {
+                        $(".s" +i+ "OffsetTop").css("color","red");
+                    } else {
+                    $(".s" +i+ "OffsetTop").css("color","white");
+                    }
+                }
+            });
 
             // each문
-            $(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height();
-                $(".scrollTop").text(parseInt(scrollTop));
+            // $(window).scroll(function(){
+            // const scrollTop = $(window).scrollTop() + $(window).height();
+            //     $(".scrollTop").text(parseInt(scrollTop));
 
-                $(".content-item").each(function(num){
-                    $(".s" +(num+1)+ "OffsetTop").text(parseInt($("#section"+(num+1)).offset().top));
+            //     $(".content-item").each(function(num){
+            //         $(".s" +(num+1)+ "OffsetTop").text(parseInt($("#section"+(num+1)).offset().top));
                     
-                    if(scrollTop > $(this).offset().top){
-                        $(".s"+(num+1)+"OffsetTop").css("color","red");
-                    } else {
-                        $(".s"+(num+1)+"OffsetTop").css("color","white");
-                    }
-                });
-
-            });
+            //         if(scrollTop > $(this).offset().top){
+            //             $(".s"+(num+1)+"OffsetTop").css("color","red");
+            //         } else {
+            //             $(".s"+(num+1)+"OffsetTop").css("color","white");
+            //         }
+            //     });
+            // });
 
             // 그림 for문
             // $(window).scroll(function(){
