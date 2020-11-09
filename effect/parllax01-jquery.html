@@ -251,16 +251,16 @@
         // $(window).scroll(function(){
         //    const scrollTop = $(window).scrollTop() + $(window).height();
            
-        //     $(".scrollTop").text(parseInt(scrollTop)); 
-        //     $(".s1OffsetTop").text(parseInt($("#section1").offset().top));
-        //     $(".s2OffsetTop").text(parseInt($("#section2").offset().top));
-        //     $(".s3OffsetTop").text(parseInt($("#section3").offset().top));
-        //     $(".s4OffsetTop").text(parseInt($("#section4").offset().top));
-        //     $(".s5OffsetTop").text(parseInt($("#section5").offset().top));
-        //     $(".s6OffsetTop").text(parseInt($("#section6").offset().top));
-        //     $(".s7OffsetTop").text(parseInt($("#section7").offset().top));
-        //     $(".s8OffsetTop").text(parseInt($("#section8").offset().top));
-        //     $(".s9OffsetTop").text(parseInt($("#section9").offset().top));
+            $(".scrollTop").text(parseInt(scrollTop)); 
+            $(".s1OffsetTop").text(parseInt($("#section1").offset().top));
+            $(".s2OffsetTop").text(parseInt($("#section2").offset().top));
+            $(".s3OffsetTop").text(parseInt($("#section3").offset().top));
+            $(".s4OffsetTop").text(parseInt($("#section4").offset().top));
+            $(".s5OffsetTop").text(parseInt($("#section5").offset().top));
+            $(".s6OffsetTop").text(parseInt($("#section6").offset().top));
+            $(".s7OffsetTop").text(parseInt($("#section7").offset().top));
+            $(".s8OffsetTop").text(parseInt($("#section8").offset().top));
+            $(".s9OffsetTop").text(parseInt($("#section9").offset().top));
             
             // 숫자 글씨색 나오기
             // if(scrollTop > $("#section1").offset().top){
@@ -364,61 +364,59 @@
             // }
 
                 // 숫자 for문
-            $(window).scroll(function(){
-            const scrollTop = $(window).scrollTop() + $(window).height();          
-                for(let i=1; i<10; i++){
-                    if(scrollTop > $("#section"+i).offset().top) {
-                        $(".s" +i+ "OffsetTop").css("color","red");
-                    } else {
-                    $(".s" +i+ "OffsetTop").css("color","white");
-                    }
-                }
-            });
-
-            // each문
             // $(window).scroll(function(){
-            // const scrollTop = $(window).scrollTop() + $(window).height();
-            //     $(".scrollTop").text(parseInt(scrollTop));
-
-            //     $(".content-item").each(function(num){
-            //         $(".s" +(num+1)+ "OffsetTop").text(parseInt($("#section"+(num+1)).offset().top));
-                    
-            //         if(scrollTop > $(this).offset().top){
-            //             $(".s"+(num+1)+"OffsetTop").css("color","red");
+            // const scrollTop = $(window).scrollTop() + $(window).height();          
+            //     for(let i=1; i<10; i++){
+            //         if(scrollTop > $("#section"+i).offset().top) {
+            //             $(".s" +i+ "OffsetTop").css("color","red");
             //         } else {
-            //             $(".s"+(num+1)+"OffsetTop").css("color","white");
+            //         $(".s" +i+ "OffsetTop").css("color","white");
             //         }
-            //     });
+            //     }
             // });
 
-            // 그림 for문
-            // $(window).scroll(function(){
-            // const scrollTop = $(window).scrollTop() + $(window).height();
-            // for(let i=1; i<10; i++){
-            //     $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top));
-            //     if(scrollTop > $("#section"+i).offset().top){
-            //         $("#section"+i).addClass("show");
-            //     } else {
-            //         $("#section"+i).removeClass("show");
-            //     }
-            // }
-
-            // 그림 each
+            // each문
             $(window).scroll(function(){
             const scrollTop = $(window).scrollTop() + $(window).height();
-            $(".scrollTop").text(parseInt(scrollTop));
-            $(".content-item").each(function(num){
-                $(".s"+(num+1)+"OffsetTop").text( parseInt($("#section"+(num+1)).offset().top) );
-                if( scrollTop > $(this).offset().top ){
-                    $(".s"+(num+1)+"OffsetTop").css("color","red");
-                    $(this).addClass("show");
-                } else {
-                    $(".s"+(num+1)+"OffsetTop").css("color","white");
-                    $(this).removeClass("show");
-                }
+                $(".scrollTop").text(parseInt(scrollTop));
+
+                $(".content-item").each(function(num){
+                    $(".s" +(num+1)+ "OffsetTop").text(parseInt($("#section"+(num+1)).offset().top));
+                    
+                    if(scrollTop > $(this).offset().top){
+                        $(".s"+(num+1)+"OffsetTop").css("color","red");
+                    } else {
+                        $(".s"+(num+1)+"OffsetTop").css("color","white");
+                    }
+                });
             });
-                 
-            
+
+            // 그림 for문
+            $(window).scroll(function(){
+            const scrollTop = $(window).scrollTop() + $(window).height();
+            for(let i=1; i<10; i++){
+                $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top));
+                if(scrollTop > $("#section"+i).offset().top){
+                    $("#section"+i).addClass("show");
+                } else {
+                    $("#section"+i).removeClass("show");
+                }
+            }
+
+            // 그림 each
+            // $(window).scroll(function(){
+            // const scrollTop = $(window).scrollTop() + $(window).height();
+            // $(".scrollTop").text(parseInt(scrollTop));
+            // $(".content-item").each(function(num){
+            //     $(".s"+(num+1)+"OffsetTop").text( parseInt($("#section"+(num+1)).offset().top) );
+            //     if( scrollTop > $(this).offset().top ){
+            //         $(".s"+(num+1)+"OffsetTop").css("color","red");
+            //         $(this).addClass("show");
+            //     } else {
+            //         $(".s"+(num+1)+"OffsetTop").css("color","white");
+            //         $(this).removeClass("show");
+            //     }
+            // });                           
         });
     </script>
 </body>

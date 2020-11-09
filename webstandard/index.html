@@ -10,6 +10,8 @@
     <!-- css style -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/lightgallery.css">
 
     <!-- webfonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -426,6 +428,8 @@
 
     <!-- script -->
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../../dothome1/responsive/assets/js/slick.min.js"></script>
+    <script src="../../dothome1/responsive/assets/js/lightgallery.min.js"></script>
     <script>
         $(".tit .btn").click(function(event){
             event.preventDefault();
@@ -438,6 +442,12 @@
             $("#cont_nav").slideToggle(); //slideDown+slideUp
             $(this).toggleClass("on");
         })
+
+        $(".ban").slick({
+            infinite:true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
     </script>
 </body>
 </html>
