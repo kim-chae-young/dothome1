@@ -263,7 +263,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .slider .slick-dots li.slick-active button {background: #2b91c8;}
 
 /* 라이트 박스 */
-.square {display: ;}
+
 .square a {float: left; width: 19%; margin: 0.5%;}
 
 /* 미디어쿼리 */
