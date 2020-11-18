@@ -73,7 +73,7 @@
     </header>
     <div class="bs-header bgs5" id="content">
         <div class="container">
-            <h1>gsap Animation Reference v1.0 &lt;/doc&gt;</h1>
+            <h1>Gsap animation Reference v1.0 &lt;/doc&gt;</h1>
             <p><a href="https://cheyoung12.dothome.co.kr" target="_blank">cheyoung12.dothome.co.kr</a></p>
         </div>
     </div>
@@ -88,25 +88,224 @@
                     </script>
                 </div>
                 <!-- //배너광고 -->
-
+                <!-- intro -->
+                <div class="bs-docs-section">
+                    <h2 id="intro" class="page-header">Animation</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <p class="bs-callout bs-callout-info">
+                                GSAP는 웹 브라우저에서 애니메이션을 구현하기 위한 자바스크립트 라이브러리입니다.
+                                기존 Css Animation이나 jQuery 애니메이션보다 탁월한 퍼포먼스를 발휘할 수 있도록 최적화된 애니메이션 전용 라이브러리입니다.
+                            </p>
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Methods</td>
+                                    <td>gsap.to()</td>
+                                    <td>일반적인 유형의 애니메이션을 정의합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Methods</td>
+                                    <td>gsap.from()</td>
+                                    <td>일반적인 유형의 애니메이션의 방향을 반대로 정의합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>                
+                <!-- //intro0 -->
+                <style>
+                   .timing {height: 360px; overflow: hidden;}
+                    .timing > div {
+                        width: 80px; height: 80px;
+                        border-radius: 50%;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 80px;
+                        margin: 10px;
+                        position: relative;
+                        overflow: hidden;
+                        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    }
+                </style>
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header">클리핑 마스크</h2>
-                    <p class="bs-callout bs-callout-info">클리핑 마스크는 레이어 마스크와 달리 상위 레이어의 이미지를 하위 레이어에 클리핑하여 레이어의 모양으로 잘라낸 것처럼 나타내는 기능입니다.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample01.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample02.jpg">
-                            </a>
+                    <h2 id="intro1" class="page-header">Animation01 - 이동하기
+                        <button type="button" class="btn btn-danger btn1-0">reset</button>
+                        <button type="button" class="btn btn-warning btn1-1">Start1</button>
+                        <button type="button" class="btn btn-warning btn1-2">Start2</button>
+                        <button type="button" class="btn btn-warning btn1-3">Start3</button>
+                        <button type="button" class="btn btn-warning btn1-4">Start4</button>
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg1">
+                            <div class="animation01"><span>01</span></div>
                         </div>
                     </div>
+<pre class="line--numbers language-js"><code>$(".btn1-0").click(function(){
+    gsap.to(".animation01",{x:0, borderRadius:"50%", rotation:0, scale:1});                                      
+});
+$(".btn1-1").click(function(){
+    gsap.to(".animation01",{x:leftWidth, duration:2});                                     
+});
+$(".btn1-2").click(function(){
+    gsap.to(".animation01",{x:leftWidth,rotation:300,borderRadius:5, duration:2});                                      
+});
+$(".btn1-3").click(function(){
+    gsap.to(".animation01",{x:leftWidth,rotation:300,borderRadius:5, scale:2, duration:2});                                      
+});
+$(".btn1-4").click(function(){
+    var tl = gsap.timeline();
+    tl.to(".animation01",{x:leftWidth, duration:1})
+    .to(".animation01",{y:leftHeight, duration:1}) 
+    .to(".animation01",{x:0, duration:1})  
+    .to(".animation01",{y:0, duration:1})                                                  
+});</code></pre>
                 </div>
                 <!-- //Intro1 -->
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">Animation02 - 이동하기 from() 
+                        <button type="button" class="btn btn-danger btn1-0">reset</button>   
+                        <button type="button" class="btn btn-warning btn2-1">start</button>       
+                        <button type="button" class="btn btn-warning btn2-2">start</button>       
+                        <button type="button" class="btn btn-warning btn2-3">start</button>       
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg2">
+                            <div class="animation02"><span>02</span></div>
+                            <div class="animation02"><span>02</span></div>
+                            <div class="animation02"><span>02</span></div>
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>$(".btn2-1").click(function(){
+    gsap.from(".animation02",{duration:1, x:leftWidth})                                               
+})
+$(".btn2-2").click(function(){
+    gsap.from(".animation02",{duration:1, y:100, opacity:0})                                               
+})
+$(".btn2-3").click(function(){
+    gsap.from(".animation02",{duration:1, x:500, opacity:0})                                               
+})     </code></pre>
+                </div>
+                <!-- //Intro2 -->
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Animation03 - 이동하기:gsap.fromTO()                        
+                        <button type="button" class="btn btn-warning btn3-1">start</button>                                                                   
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg3">
+                            <div class="animation03"><span>03</span></div>
+                            <div class="animation03"><span>03</span></div>
+                            <div class="animation03"><span>03</span></div>
+                            <div class="animation03"><span>03</span></div>
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>$(".btn3-1").click(function(){
+    gsap.fromTo(".animation03", 
+    {opacity:1, x:0, y:0, borderRadius:0},
+    {opacity:1, x:500, y:100, borderRadius:"50%", duration:1})                          
+});     </code></pre>
+                </div>
+                <!-- //Intro3 -->
+                <style>
+                    
+                </style>
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Animation04 - 움직임효과
+                        <button type="button" class="btn btn-warning btn4-1">right</button>                        
+                                            
+                    </h2>
+                    <div class="sample" >
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg4" style="height: 730px;">
+                            <div class="animation04-1"><span>04</span></div>                            
+                            <div class="animation04-2"><span>04</span></div>                            
+                            <div class="animation04-3"><span>04</span></div>                            
+                            <div class="animation04-4"><span>04</span></div>                            
+                            <div class="animation04-5"><span>04</span></div>                            
+                            <div class="animation04-6"><span>04</span></div>                            
+                            <div class="animation04-7"><span>04</span></div>                            
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>  </code></pre>
+                </div>
+                <!-- //Intro4 -->
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Animation05 - 무한 애니메이션
+                        <button type="button" class="btn btn-warning">start</button>                      
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg5">
+                            <div class="animation08"><span>08</span></div>                            
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>   </code></pre>
+                </div>
+                <!-- //Intro5 -->
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Animation06 - 일정한 시간 애니메이션
+                        <button type="button" class="btn btn-warning">start</button>                      
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg6">
+                            <div class="animation09"><span>09</span></div>                            
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>   </code></pre>
+                </div>
+                <!-- //Intro6 -->
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">Animation07 - 사라지는 애니메이션
+                        <button type="button" class="btn btn-warning">start</button>                      
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg7">
+                            <div class="animation10"><span>10</span></div>                            
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>   </code></pre>
+                </div>
+                <!-- //Intro7 -->
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">Animation08 - 콜백함수
+                        <button type="button" class="btn btn-warning">start</button>                      
+                    </h2>
+                    <div class="sample">
+                        <h3><span></span><em class="sr-only">animation</em></h3>
+                        <div class="timing bg8">
+                            <div class="animation11"><span>11</span></div>                            
+                        </div>
+                    </div>
+<pre class="line--numbers language-js"><code>$("#intro8 > button").click(function(){
+$(".animation10")
+    .animate({left:leftWidth},500,"easeOutQuart")
+    .animate({top:leftWidth},500,"easeOutQuart")
+    .animate({left:"0%"},500,"easeOutQuart")
+    .animate({top:"0%"},500,"easeOutQuart",function(){
+        alert("도착");
+    });            
+})  </code></pre>
+                </div>
+                <!-- //Intro8 -->
                 
         </div>
         <!-- //col-md-9 -->
@@ -114,7 +313,12 @@
         <div class="col-md-3">
             <div class="bs-sidebar hidden-print" role="complementary">
                 <ul class="nav bs-sidenav">
-                    <li><a href="#intro1">레이어 마스크</a></li>
+                    <li><a href="#intro1">Animation01</a></li>
+                    <li><a href="#intro2">Animation02</a></li>
+                    <li><a href="#intro3">Animation03</a></li>
+                    <li><a href="#intro4">Animation04</a></li>
+                    <li><a href="#intro5">Animation05</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -141,8 +345,106 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../assets/js/jquery-1.9.1.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="../assets/js/docs.min.js"></script>
     <script src="../assets/js/prism.js"></script>
+    <script>     
+        const leftWidth = $(".sample").width()-100;
+        const leftHeight = $(".sample").height()-140;
+
+        $(".btn1-0").click(function(){
+            gsap.to(".animation01",{x:0, borderRadius:"50%", rotation:0, scale:1});                                      
+        });
+        $(".btn1-1").click(function(){
+            gsap.to(".animation01",{x:leftWidth, duration:2});                                     
+        });
+        $(".btn1-2").click(function(){
+            gsap.to(".animation01",{x:leftWidth,rotation:300,borderRadius:5, duration:2});                                      
+        });
+        $(".btn1-3").click(function(){
+            gsap.to(".animation01",{x:leftWidth,rotation:300,borderRadius:5, scale:2, duration:2});                                      
+        });
+        $(".btn1-4").click(function(){
+            var tl = gsap.timeline();
+            tl.to(".animation01",{x:leftWidth, duration:1})
+            .to(".animation01",{y:leftHeight, duration:1}) 
+            .to(".animation01",{x:0, duration:1})  
+            .to(".animation01",{y:0, duration:1})                                                  
+        });
+
+
+        $(".btn2-1").click(function(){
+            gsap.from(".animation02",{duration:1, x:leftWidth})                                               
+        })
+        $(".btn2-2").click(function(){
+            gsap.from(".animation02",{duration:1, y:100, opacity:0})                                               
+        })
+        $(".btn2-3").click(function(){
+            gsap.from(".animation02",{duration:1, x:500, opacity:0})                                               
+        })
+
+        $(".btn3-1").click(function(){
+            gsap.fromTo(".animation03", 
+            {opacity:1, x:0, y:0, borderRadius:0},
+            {opacity:1, x:500, y:100, borderRadius:"50%", duration:1})                          
+        });
+
+        $(".btn4-1").click(function(){
+            gsap.to(".animation04-1"),{duration:2, left:leftWidth, rotationY:360, ease: "power1.out"}       
+            gsap.to(".animation04-2"),{duration:2, left:leftWidth, rotationY:360, ease: "power2.out"}       
+            gsap.to(".animation04-3"),{duration:2, left:leftWidth, rotationY:360, ease: "power3.out"}       
+            gsap.to(".animation04-4"),{duration:2, left:leftWidth, rotationY:360, ease: "power4.out"}       
+            gsap.to(".animation04-5"),{duration:2, left:leftWidth, rotationY:360, ease: "elastic.out(1, 0.3)"}       
+            gsap.to(".animation04-6"),{duration:2, left:leftWidth, rotationY:360, ease: "steps(12)"}       
+            gsap.to(".animation04-7"),{duration:2, left:leftWidth, rotationY:360, ease: "expo.out"}       
+        });
+
+        $("#intro5 > button").click(function(){
+            loop();
+        });
+        function loop() {
+            $(".animation08")
+                .animate({left:leftWidth},"fast")
+                .animate({top:leftHeight},"fast")
+                .animate({left:"0%"},"fast")
+                .animate({top:"0%"},"fast",loop)
+        }
+
+        $("#intro6 > button").click(function(){
+            setInterval(time, 4000);
+        });
+        function time() {
+            $(".animation09")
+                .animate({left:leftWidth},500,"easeOutQuart")
+                .animate({top:leftWidth},500,"easeOutQuart")
+                .animate({left:"0%"},500,"easeOutQuart")
+                .animate({top:"0%"},500,"easeOutQuart");
+        }
+
+        $("#intro7 > button").click(function(){
+            $(".animation10")
+                .animate({left:leftWidth},500,"easeOutQuart")
+                .animate({top:leftWidth},500,"easeOutQuart")
+                .animate({left:"0%"},500,"easeOutQuart")
+                .animate({top:"0%"},500,"easeOutQuart");  
+            setInterval(out,4000);          
+        });
+
+        function out(){
+                $("animation10").clearQueue().hide();
+            }
+        
+            // 8
+        $("#intro8 > button").click(function(){
+            $(".animation10")
+                .animate({left:leftWidth},500,"easeOutQuart")
+                .animate({top:leftWidth},500,"easeOutQuart")
+                .animate({left:"0%"},500,"easeOutQuart")
+                .animate({top:"0%"},500,"easeOutQuart",function(){
+                    alert("도착");
+                });            
+        })  
+    </script>
 </body>
 
 </html>
