@@ -701,11 +701,9 @@
             $(this).addClass("button");
         });         
 
-        $ (".start6").click(function(){
-            $(".timing.bg6 > div").addClass("normal");
-            setTimeout(function(){
-                $(".timing > div").removeClass("reverse");
-            },5000);
+        $(".btn").click(function(){
+            const btn1 = $(this).text();
+            $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(btn1);
         });
 
         $ (".start7").click(function(){

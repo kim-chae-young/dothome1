@@ -110,10 +110,21 @@
                                     <td>gsap.to()</td>
                                     <td>일반적인 유형의 애니메이션을 정의합니다.</td>
                                 </tr>
-                                <tr>
-                                    <td class="ce va" rowspan="3">Methods</td>
+                                <tr>                                    
                                     <td>gsap.from()</td>
                                     <td>일반적인 유형의 애니메이션의 방향을 반대로 정의합니다.</td>
+                                </tr>
+                                <tr>                                    
+                                    <td>gsap.fromTo()</td>
+                                    <td></td>
+                                </tr>
+                                <tr>                                    
+                                    <td>gsap.set()</td>
+                                    <td></td>
+                                </tr>
+                                <tr>                                    
+                                    <td>gsap.timeline()</td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -205,10 +216,7 @@ $(".btn2-3").click(function(){
                     <div class="sample">
                         <h3><span></span><em class="sr-only">animation</em></h3>
                         <div class="timing bg3">
-                            <div class="animation03"><span>03</span></div>
-                            <div class="animation03"><span>03</span></div>
-                            <div class="animation03"><span>03</span></div>
-                            <div class="animation03"><span>03</span></div>
+                            <div class="animation03"><span>03</span></div>                            
                         </div>
                     </div>
 <pre class="line--numbers language-js"><code>$(".btn3-1").click(function(){
@@ -229,7 +237,7 @@ $(".btn2-3").click(function(){
                     </h2>
                     <div class="sample" >
                         <h3><span></span><em class="sr-only">animation</em></h3>
-                        <div class="timing bg4" style="height: 730px;">
+                        <div class="timing bg4" style="height: 650px;">
                             <div class="animation04-1"><span>04</span></div>                            
                             <div class="animation04-2"><span>04</span></div>                            
                             <div class="animation04-3"><span>04</span></div>                            
@@ -365,7 +373,7 @@ $(".animation10")
             gsap.to(".animation01",{x:leftWidth,rotation:300,borderRadius:5, scale:2, duration:2});                                      
         });
         $(".btn1-4").click(function(){
-            var tl = gsap.timeline();
+            var tl = gsap.timeline({repeat: -1});
             tl.to(".animation01",{x:leftWidth, duration:1})
             .to(".animation01",{y:leftHeight, duration:1}) 
             .to(".animation01",{x:0, duration:1})  
@@ -390,14 +398,14 @@ $(".animation10")
         });
 
         $(".btn4-1").click(function(){
-            gsap.to(".animation04-1"),{duration:2, left:leftWidth, rotationY:360, ease: "power1.out"}       
-            gsap.to(".animation04-2"),{duration:2, left:leftWidth, rotationY:360, ease: "power2.out"}       
-            gsap.to(".animation04-3"),{duration:2, left:leftWidth, rotationY:360, ease: "power3.out"}       
-            gsap.to(".animation04-4"),{duration:2, left:leftWidth, rotationY:360, ease: "power4.out"}       
-            gsap.to(".animation04-5"),{duration:2, left:leftWidth, rotationY:360, ease: "elastic.out(1, 0.3)"}       
-            gsap.to(".animation04-6"),{duration:2, left:leftWidth, rotationY:360, ease: "steps(12)"}       
-            gsap.to(".animation04-7"),{duration:2, left:leftWidth, rotationY:360, ease: "expo.out"}       
-        });
+            gsap.to(".animation04-1", {duration:2, left: leftWidth, rotationY: 360, ease: "power1.out"})
+            gsap.to(".animation04-2", {duration:2, left: leftWidth, rotationY: 360, ease: "power2.out"})
+            gsap.to(".animation04-3", {duration:2, left: leftWidth, rotationY: 360, ease: "power3.out"})
+            gsap.to(".animation04-4", {duration:2, left: leftWidth, rotationY: 360, ease: "power4.out"})
+            gsap.to(".animation04-5", {duration:2, left: leftWidth, rotationY: 360, ease: "sine.out"})
+            gsap.to(".animation04-6", {duration:2, left: leftWidth, rotationY: 360, ease: "bounce.out"})
+            gsap.to(".animation04-7", {duration:2, left: leftWidth, rotationY: 360, ease: "elastic.out(1, 0.3)"})
+        })
 
         $("#intro5 > button").click(function(){
             loop();
