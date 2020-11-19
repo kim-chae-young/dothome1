@@ -19,14 +19,15 @@
         .header .logo {
             width: 155px; height: 30px; 
             background: url(https://static-clova.pstatic.net/static/468c453/img/sprite/sp_svg_icon.png);
-            position: absolute; left: 0px; top: 30px;
+            position: absolute; left: 0px; top: 15px;
+            margin-top: 15px;
         }
-        .header .menu {float: left; position: absolute; left: 25%; top: 35px;}
-        .header .menu li {display: inline-block;  width: 110px; height: 15px; text-align: center; position: relative;}
-        .header .menu li a {font-size: 15px;color: #ccc;}
+        .header .menu {float: left; padding: 30px 0 0 350px;}
+        .header .menu li {display: inline-block; width: 110px; height: 15px; text-align: center; }
+        .header .menu li a {font-size: 15px; color: #ccc;}
         .header .button {float: right; position: relative; top: 25px;}
-        .header .button .btn1 {position: absolute; right: 120px; top: 0; width: 70px; border-radius:5px; font-weight: 900; text-align: center; font-size: 12px; height: 20px;}
-        .header .button .btn2 {position: absolute; right: 0; top: 0;  border-radius:5px; font-weight: 900; text-align: center; width: 80px; height: 20px; font-size: 12px;}
+        .header .button .btn1 {float: left; border-radius:5px; font-weight: 900; text-align: center; font-size: 12px; height: 20px; margin-right: 20px;}
+        .header .button .btn2 {float: left; border-radius:5px; font-weight: 900; text-align: center; width: 80px; height: 20px; font-size: 12px;}
         .header .button a {color: #ccc; border: 1px solid #ccc; padding: 10px;}
         .banner h1 {
             font-size: 40px; 
@@ -38,21 +39,23 @@
             color: #fff;
         }
         .banner a {
+            display: inline-block;
             position: absolute; left: 480px; top: 390px;
             width: 140px; height: 50px; font-size: 15px; 
             font-weight: bold;
             border:2px solid #fff; border-radius: 30px;
             color: #fff; text-align: center; line-height: 50px;
         }
-        .cont1 {height: 550px;}    
-        .cont1 > div {width: 300px; height: 300px;}   
-        .cont1 h2 {text-align: center; padding-top: 50px; font-size: 30px;}
+
+        #cont1 {height: 550px;}
+        .cont1 {text-align: center;}      
+        .cont1 h2 { padding-top: 50px; font-size: 30px;}
         .cont1 p {text-align: center; padding-top: 20px;}
-        
-        .cont1 .icon1 {float: left; padding-top: 50px;}
-        .cont1 .icon2 {float: left; padding-top: 50px;}
-        .cont1 .icon3 {float: left; padding-top: 50px;}
-        .cont1 .icon4 {float: left; padding-top: 50px;}
+        .cont1 .iconbox {left: 50px; padding-top: 20px; text-align: center;}
+        .cont1 .iconbox .icon1 {float: left; padding-top: 50px; width: 30%; width: 300px; height: 300px;}
+        .cont1 .iconbox .icon2 {float: left; padding-top: 50px; width: 30%;width: 300px; height: 300px;}
+        .cont1 .iconbox .icon3 {float: left; padding-top: 50px; width: 30%; width: 300px; height: 300px;}
+        .cont1 .iconbox .icon4 {float: right; padding-top: 50px; width: 30%; width: 300px; height: 300px;}
         .cont1 .icon1 h1 {
             width: 100px; height: 100px;
             left: 5%; top: 200px; 
@@ -77,28 +80,28 @@
             padding: 0px 30%;            
         }
         .cont1 .icon4 h1 img {width: 100%;}
-        .cont1 .icon1 h3 {left: 50px; padding-top: 20px; text-align: center;}
+        
+        .cont1 .icon1 h3 {}
         .cont1 .icon2 h3 {left: 50px; padding-top: 20px;  text-align: center;}
         .cont1 .icon3 h3 {left: 50px; padding-top: 20px;  text-align: center;}
         .cont1 .icon4 h3 {left: 50px; padding-top: 20px;  text-align: center;}
-        
-        .cont2 {height: 550px; background: #f8fafc; padding: 150px 20px;}
-        .cont2 .text {float: left; width: 20%; display: inline; padding: 140px 0 0 320px;}
+
+        #cont2 {background: #f8fafc;}
+        .cont2 {height: 550px; padding: 150px 0px;}
+        .cont2 .text {float: left; width: 30%; display: inline; padding: 140px 0 0 0px;}
         .cont2 .text h2 {font-size: 35px;}
         .cont2 .text p {font-size: 20px; margin: 20px 0;}
         .cont2 h1 {width: 100px; height: 100px;}
         .cont2 h1 img {width: 100%;} 
-        .cont2 .img1 {width: 30%; display: inline;}
-        .cont2 .img2 {margin-left: 20px; width: 30%; display: inline;}
+        .cont2 .img1 {width: 15%; display: inline;}
+        .cont2 .img2 {margin-left: 20px; width: 15%; display: inline;}
         .cont2 .img1 .box1 {     
             display: inline-block;
             background-color: #fff;
             border: 1px solid #eff3f7;
             width: 300px;                 
             border-radius: 10px;    
-            padding: 62px 50px 60px 52px;  
-           
-           
+            padding: 62px 50px 60px 52px;           
         }
         
         .cont2 .img1 .box1 h1 {padding-top: 20px; font-weight: 600;}
@@ -119,10 +122,11 @@
         .cont2 .img2 .box2 h4 {font-size: 30px; padding-top: 20px;}
         .cont2 .img2 .box2 h4,p {text-align: left;}
         
+        #cont3 {background: url(https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/banners/200309_blog_pc.png) no-repeat 0 0 ;}
         .cont3 {
             height: 300px;
             margin-top: 0; text-align: center; 
-            background: url(https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/banners/200309_blog_pc.png) no-repeat 0 0 ;
+            
             
         }     
         .cont3 .text h1 {color: #fff; font-size: 38px; padding-top: 50px;}       
@@ -135,27 +139,29 @@
             padding: 14px 28px;           
         } 
         
-        .cont4 {height: 1100px;}
+        #cont4 {height: 1100px;}
+        .cont4 {}
         .cont4 .text {padding: 147px 20px 150px 0;}
         .cont4 .text h1 {font-size: 36px; line-height: 48px;}
         .cont4 .text p {text-align: center; margin-top: 14px;}
-        .cont4 .img .box1 {width: 372px; height: 300px; border: 1px solid #ccc; float: left; border-radius: 10px;}
-        .cont4 .img .box2 {width: 372px; height: 300px; border: 1px solid #ccc; float: left; border-radius: 10px;}
-        .cont4 .img .box3 {width: 372px; height: 300px;  border: 1px solid #ccc; float: left; border-radius: 10px;}
+        .cont4 .img .box1 {width: 372px; height: 500px; border: 1px solid #ccc; float: left; border-radius: 10px; margin-right: 20px;}
+        .cont4 .img .box2 {width: 372px; height: 500px; border: 1px solid #ccc; float: left; border-radius: 10px; margin-right: 20px;}
+        .cont4 .img .box3 {width: 372px; height: 500px;  border: 1px solid #ccc; float: left; border-radius: 10px;}
         .cont4 .img .news {margin: 80px 0; }
-        .cont4 .img .news .box1 {width: 33%; float: left; border: 1px solid #ccc; float: left; border-radius: 10px;}
+        .cont4 .img .news .box1 {width: 30%; float: left; border: 1px solid #ccc; float: left; border-radius: 10px;}
         .cont4 .img .news .box1 strong {font-size: 19px; line-height: 26px; padding: 40px;}
         .cont4 .img .news .box2 strong {font-size: 19px; line-height: 26px; padding: 40px;}
         .cont4 .img .news .box3 strong {font-size: 19px; line-height: 26px; padding: 40px;}
-        .cont4 .img .news .box1 p {font-size: 19px; margin: 10px;}
-        .cont4 .img .news .box2 {width: 33%; float: left;}
-        .cont4 .img .news .box3 {width: 33%; float: left; }
-        .cont4 .img .news .box1 img {width: 100%; float: left;}
-        .cont4 .img .news .box2 img {width: 100%; float: left; }
-        .cont4 .img .news .box3 img {width: 100%; float: left;}
+        .cont4 .img .news .box1 p {font-size: 19px; margin: 10px; padding-top: 10px;}
+        .cont4 .img .news .box2 {width: 30%; float: left;}
+        .cont4 .img .news .box3 {width: 30%; float: left; }
+        .cont4 .img .news .box1 img {width: 100%; float: left; border-radius: 5px 5px 0 0;}
+        .cont4 .img .news .box2 img {width: 100%; float: left; border-radius: 5px 5px 0 0;}
+        .cont4 .img .news .box3 img {width: 100%; float: left; border-radius: 5px 5px 0 0;}
         .cont4 .text h1 {text-align: center;}
         
-        .cont5 {height: 300px; text-align: center;}
+        #cont5 {height: 300px; background: url(img/cont1-5.png); background-size: contain;}
+        .cont5 {text-align: center;}
         .cont5 .box {padding: 68px 0 67px 0;}        
         .cont5 .box .naver {text-align: center; margin-top: 10px; font-size: 18px; line-height: 24px; color:rgba(0,0,0,0.5);}
         .cont5 .box .title {font-size: 37px; line-height: 52px;}
@@ -169,27 +175,29 @@
         }        
         .cont5 .bg {background: url(bg_cloud.png);}
         
-        .cont6 {text-align: center;}
+        #cont6 {background: url(img/cont1-6.png) center; background-size: contain;}
+        .cont6 {text-align: center; color: #fff;}
         .cont6 .box {padding: 68px 0 67px 0;}
-        .cont6 .box .title {font-size: 37px; color: #ccc;}
-        .cont6 .box .naver {text-align: center; margin-top: 10px;}
+        .cont6 .box .title {font-size: 37px; color: #fff;}
+        .cont6 .box .naver {text-align: center; margin-top: 10px; }
         .cont6 .box .btn {
             display: inline-block;
             margin-top: 25px;
             width: 140px; height: 50px; font-size: 15px; 
             font-weight: bold;
             border:1px solid #ccc; border-radius: 30px;
-            color: #232323; line-height: 50px;          
+            color: #fff; line-height: 50px;          
         }  
 
-        .footer {height: 100px;}
+        #footer {padding: 20px 0;}
+        .footer {}
         .footer .logo {
             background: url(https://static-clova.pstatic.net/static/468c453/img/sprite/sp_svg_icon.png) no-repeat;
             display: block;
             background-position: -4px -34px;
             width: 145px; height: 0px; 
             padding-top: 20px;  
-            position: absolute; left: 0px; top: 30px;        
+                
         }
         .footer .list {
             overflow: hidden; 
@@ -199,13 +207,13 @@
             font-weight: bold; 
             background-image: 7px; 
             overflow: hidden; 
-            padding: 65px 0; 
+            padding: 30px 0; 
             text-align: center;
             
         }
         .footer .list .list1 {float: left; padding-right: 100px;}
         .footer .list .list2 {float: left; padding: 0 140px 0 100px;}
-        .footer .list .list3 {float: left; padding-left: 100px;}
+        .footer .list .list3 {float: right;}
     </style>
 </head>
 <body>
@@ -238,104 +246,128 @@
             </div>
         </nav>
         <section id="contents">
-            <div class="container">
-                <div class="cont1">                    
-                    <h2>CLOVA AI</h2>
-                    <P>네이버 클로바는 독자적으로 개발한 AI기술을 통해<br>세상에 없던 새로운 기술, 서비스, 제품을 만들어가고 있습니다.</P>
-                    <div class="icon1">
-                        <h1><img src="img/img1.jpg" alt="이미지"></h1>
-                        <h3>Device & Service</h3>
-                        <p>스마트 디바이스, 서비스로<br>더욱 편리한 일상을 만나보세요.</p>
-                    </div>
-                    <div class="icon2">
-                        <h1><img src="img/img2.jpg" alt="이미지"></h1>
-                        <h3>Solution</h3>
-                        <p>비즈니스, 맞춤형 AI솔루션으로<br>혁신을 경험하세요.</p>
-                    </div>
-                    <div class="icon3">
-                        <h1><img src="img/img3.jpg" alt="이미지"></h1>
-                        <h3>Product</h3>
-                        <p>세계최고 수준의 AI가 적용된<br>놀라운서비스, 제품을 제공해보세요</p>
-                    </div>
-                    <div class="icon4">
-                        <h1><img src="img/img4.jpg" alt="이미지"></h1>
-                        <h3>Research</h3>
-                        <p>CLOVA AI의 독자적인 기술과<br>세계적인 연구 성과를 확인하세요.</p>
+            <div id="cont1">
+                <div class="container">
+                    <div class="cont1">                    
+                        <h2>CLOVA AI</h2>
+                        <P>네이버 클로바는 독자적으로 개발한 AI기술을 통해<br>세상에 없던 새로운 기술, 서비스, 제품을 만들어가고 있습니다.</P>
+                        <div class="iconbox">
+                            <div class="icon1">
+                                <h1><img src="img/img1.jpg" alt="이미지"></h1>
+                                <h3>Device & Service</h3>
+                                <p>스마트 디바이스, 서비스로<br>더욱 편리한 일상을 만나보세요.</p>
+                            </div>
+                            <div class="icon2">
+                                <h1><img src="img/img2.jpg" alt="이미지"></h1>
+                                <h3>Solution</h3>
+                                <p>비즈니스, 맞춤형 AI솔루션으로<br>혁신을 경험하세요.</p>
+                            </div>
+                            <div class="icon3">
+                                <h1><img src="img/img3.jpg" alt="이미지"></h1>
+                                <h3>Product</h3>
+                                <p>세계최고 수준의 AI가 적용된<br>놀라운서비스, 제품을 제공해보세요</p>
+                            </div>
+                            <div class="icon4">
+                                <h1><img src="img/img4.jpg" alt="이미지"></h1>
+                                <h3>Research</h3>
+                                <p>CLOVA AI의 독자적인 기술과<br>세계적인 연구 성과를 확인하세요.</p>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-                <div class="cont2">
-                    <div class="text">
-                        <h2>CLOVA AI<br>Special feature</h2>
-                        <p>네이버, 라인의 풍부한 데이터와<br>세계 최고 수준의 AI기술이 만나<br>전에 없던 시너지를 창출합니다.</p>
-                    </div>
-                    <div class="img1">
-                        <div class="box1">
-                            <h1><img src="img/img5.jpg" alt="이미지5"></h1>
-                            <h4>customized Solution</h4>
-                            <p>네이버라인의 서비스를 통해 축적된<br>데이터와 클로바의 자체기술로 제작한<br>AI엔진을 활용하여, 개별 비즈니스의<br>니즈의 부합하는 customized Solution<br>을 제공합니다.</p>
+            <div id="cont2">
+                <div class="container">
+                    <div class="cont2">
+                        <div class="text">
+                            <h2>CLOVA AI<br>Special feature</h2>
+                            <p>네이버, 라인의 풍부한 데이터와<br>세계 최고 수준의 AI기술이 만나<br>전에 없던 시너지를 창출합니다.</p>
                         </div>
-                    <div class="img2">
-                        <div class="box2">
-                            <h1><img src="img/img6.jpg" alt="이미지5"></h1>
-                            <h4>Integrated AI Engine</h4>
-                            <p>네이버 클로바에서 자체적으로 보유한 AI<br>기술을 복합적으로 활용한 솔루션을 개발<br>할 수 있습니다. 이를 통해 단일 기술을<br>활용한 경우보다 월등한 시너지를 만들어냅니다.</p>
+                        <div class="img1">
+                            <div class="box1">
+                                <h1><img src="img/img5.jpg" alt="이미지5"></h1>
+                                <h4>customized Solution</h4>
+                                <p>네이버라인의 서비스를 통해 축적된<br>데이터와 클로바의 자체기술로 제작한<br>AI엔진을 활용하여, 개별 비즈니스의<br>니즈의 부합하는 customized Solution<br>을 제공합니다.</p>
+                            </div>
+                        <div class="img2">
+                            <div class="box2">
+                                <h1><img src="img/img6.jpg" alt="이미지5"></h1>
+                                <h4>Integrated AI Engine</h4>
+                                <p>네이버 클로바에서 자체적으로 보유한 AI<br>기술을 복합적으로 활용한 솔루션을 개발<br>할 수 있습니다. 이를 통해 단일 기술을<br>활용한 경우보다 월등한 시너지를 만들어냅니다.</p>
+                            </div>
                         </div>
+                        </div>                  
                     </div>
-                    </div>                  
-                </div>          
-                <div class="cont3">
-                    <div class="text">                        
-                        <h1>CLOVA Official Blog</h1>
-                        <p>클로바 공식 블로그에서 다양한 소식을 확인해보세요</p>
-                        <a href="#">자세히 보기</a>
-                    </div>                    
-                        
-                                                     
-                </div>    
-                <div class="cont4">
+                </div>                
+            </div>
+                <div id="cont3">
                     <div class="container">
-                        <div class="text">                        
-                            <h1>Latest News</h1>
-                            <p>좀더 편리하고 스마트한 삶을 위한 클로바의 다양한 AI 적용사례 및 소식들을 확인해보세요.</p>
+                        <div class="cont3">
+                            <div class="text">                        
+                                <h1>CLOVA Official Blog</h1>
+                                <p>클로바 공식 블로그에서 다양한 소식을 확인해보세요</p>
+                                <a href="#">자세히 보기</a>
+                            </div>  
                         </div>
-                        <div class="img">
-                            <div class="news">
-                                <div class="box1">
-                                    <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_napp_smarthome_pc.png" alt="이미지5">  
-                                    <strong>클로바 스마트홈, 네이버앱에 적용</strong> 
-                                    <p>클로바 스마트홈을 네이버앱에서도 이용할 <br>수 있습니다. 네이버앱의 그린닷 음성 검색<br>으로 집안의 IoT 가전을 제어하고 편리한 <br>리모컨 기능도 활용해보세요.</p>                     
-                                </div> 
-                                <div class="box2">
-                                    <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20201015_clova_pc.png" alt="이미지5">  
-                                    <strong>네이버 B2B, '네이버클라우드'로 강화</strong> 
-                                    <p>대한민국 대표 클라우드 기업으로 성장한<br>NBP가 그동안의 기술과 경험을 바탕으로<br>‘네이버클라우드’라는 새로운 이름 아래<br>더 큰 도전을 시작합니다.</p>                                           
+                    </div>                                                            
+                </div>    
+                <div id="cont4">
+                    <div class="container">
+                        <div class="cont4">
+                            <div class="container">
+                                <div class="text">                        
+                                    <h1>Latest News</h1>
+                                    <p>좀더 편리하고 스마트한 삶을 위한 클로바의 다양한 AI 적용사례 및 소식들을 확인해보세요.</p>
                                 </div>
-                                <div class="box3">
-                                    <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_navermusic_pc.png" alt="이미지5">
-                                    <strong>네이버 뮤직 연동 서비스 종료</strong> 
-                                    <p>2020년 11월, 네이버 뮤직 서비스 종료에 <br>따라, 네이버 클로바에서의 네이버 뮤직<br>연동 기능이 종료됩니다. 12월1일부터<br>네이버 뮤직 서비스는 VIBE로 전환됩니다.</p>                     
+                                <div class="img">
+                                    <div class="news">
+                                        <div class="box1">
+                                            <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_napp_smarthome_pc.png" alt="이미지5">  
+                                            <strong>클로바 스마트홈, 네이버앱에 적용</strong> 
+                                            <p>클로바 스마트홈을 네이버앱에서도 이용할 <br>수 있습니다. 네이버앱의 그린닷 음성 검색<br>으로 집안의 IoT 가전을 제어하고 편리한 <br>리모컨 기능도 활용해보세요.</p>                     
+                                        </div> 
+                                        <div class="box2">
+                                            <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20201015_clova_pc.png" alt="이미지5">  
+                                            <strong>네이버 B2B, '네이버클라우드'로 강화</strong> 
+                                            <p>대한민국 대표 클라우드 기업으로 성장한<br>NBP가 그동안의 기술과 경험을 바탕으로<br>‘네이버클라우드’라는 새로운 이름 아래<br>더 큰 도전을 시작합니다.</p>                                           
+                                        </div>
+                                        <div class="box3">
+                                            <img src="https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_navermusic_pc.png" alt="이미지5">
+                                            <strong>네이버 뮤직 연동 서비스 종료</strong> 
+                                            <p>2020년 11월, 네이버 뮤직 서비스 종료에 <br>따라, 네이버 클로바에서의 네이버 뮤직<br>연동 기능이 종료됩니다. 12월1일부터<br>네이버 뮤직 서비스는 VIBE로 전환됩니다.</p>                     
+                                        </div>
+                                    </div>                            
                                 </div>
-                            </div>                            
-                        </div>
-                    </div>                  
-                </div>  
-                <div class="cont5">
-                    <h1 class="bg"></h1>
-                    <div class="box">
-                        <h2 class="title">With NAVER Cloud</h2>
-                        <p class="naver">네이버 클라우드 플랫폼에서 네이버 클로바의 기술 제품을 이용하세요.</p>
-                        <a href="#" class="btn">Biz start</a>
-                    </div>                    
-                </div> 
-                <div class="cont6">
-                    <h1 class="bg"></h1>
-                    <div class="box">
-                        <h2 class="title">With NAVER CLOVA</h2>
-                        <p class="naver">네이버 클로바가 제안하는 AI 솔루션을 통해 비즈니스의 새로운 성장과 발전을 경험하세요.</p>
-                        <a href="#" class="btn">비즈니스 문의</a>
-                    </div>                    
-                </div>          
+                            </div>                  
+                        </div> 
+                    </div>
+                </div>
+                <div id="cont5">
+                    <div class="container">
+                        <div class="cont5">
+                            <h1 class="bg"></h1>
+                            <div class="box">
+                                <h2 class="title">With NAVER Cloud</h2>
+                                <p class="naver">네이버 클라우드 플랫폼에서 네이버 클로바의 기술 제품을 이용하세요.</p>
+                                <a href="#" class="btn">Biz start</a>
+                            </div>                    
+                        </div> 
+                    </div>
+                </div>
+                <div id="cont6">
+                    <div class="container">
+                        <div class="cont6">
+                            <h1 class="bg"></h1>
+                            <div class="box">
+                                <h2 class="title">With NAVER CLOVA</h2>
+                                <p class="naver">네이버 클로바가 제안하는 AI 솔루션을 통해 비즈니스의 새로운 성장과 발전을 경험하세요.</p>
+                                <a href="#" class="btn">비즈니스 문의</a>
+                            </div>                    
+                        </div> 
+                    </div>
+                </div>
+                         
         </section>
         <footer id="footer">
             <div class="container">
