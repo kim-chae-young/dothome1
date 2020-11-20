@@ -106,7 +106,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce va" rowspan="3">Methods</td>
+                                    <td class="ce va" rowspan="5">Methods</td>
                                     <td>gsap.to()</td>
                                     <td>일반적인 유형의 애니메이션을 정의합니다.</td>
                                 </tr>
@@ -247,11 +247,19 @@ $(".btn2-3").click(function(){
                             <div class="animation04-7"><span>04</span></div>                            
                         </div>
                     </div>
-<pre class="line--numbers language-js"><code>  </code></pre>
+<pre class="line--numbers language-js"><code>$(".btn4-1").click(function(){
+gsap.to(".animation04-1", {duration:2, left: leftWidth, rotationY: 360, ease: "power1.out"})
+gsap.to(".animation04-2", {duration:2, left: leftWidth, rotationY: 360, ease: "power2.out"})
+gsap.to(".animation04-3", {duration:2, left: leftWidth, rotationY: 360, ease: "power3.out"})
+gsap.to(".animation04-4", {duration:2, left: leftWidth, rotationY: 360, ease: "power4.out"})
+gsap.to(".animation04-5", {duration:2, left: leftWidth, rotationY: 360, ease: "sine.out"})
+gsap.to(".animation04-6", {duration:2, left: leftWidth, rotationY: 360, ease: "bounce.out"})
+gsap.to(".animation04-7", {duration:2, left: leftWidth, rotationY: 360, ease: "elastic.out(1, 0.3)"})
+})  </code></pre>
                 </div>
                 <!-- //Intro4 -->
                 <!-- Intro5 -->
-                <div class="bs-docs-section">
+                <!-- <div class="bs-docs-section">
                     <h2 id="intro5" class="page-header">Animation05 - 무한 애니메이션
                         <button type="button" class="btn btn-warning">start</button>                      
                     </h2>
@@ -262,10 +270,10 @@ $(".btn2-3").click(function(){
                         </div>
                     </div>
 <pre class="line--numbers language-js"><code>   </code></pre>
-                </div>
+                </div> -->
                 <!-- //Intro5 -->
                 <!-- Intro6 -->
-                <div class="bs-docs-section">
+                <!-- <div class="bs-docs-section">
                     <h2 id="intro6" class="page-header">Animation06 - 일정한 시간 애니메이션
                         <button type="button" class="btn btn-warning">start</button>                      
                     </h2>
@@ -275,11 +283,17 @@ $(".btn2-3").click(function(){
                             <div class="animation09"><span>09</span></div>                            
                         </div>
                     </div>
-<pre class="line--numbers language-js"><code>   </code></pre>
-                </div>
+<pre class="line--numbers language-js"><code>function time() {
+$(".animation09")
+    .animate({left:leftWidth},500,"easeOutQuart")
+    .animate({top:leftWidth},500,"easeOutQuart")
+    .animate({left:"0%"},500,"easeOutQuart")
+    .animate({top:"0%"},500,"easeOutQuart");
+}   </code></pre>
+                </div> -->
                 <!-- //Intro6 -->
                 <!-- Intro7 -->
-                <div class="bs-docs-section">
+                <!-- <div class="bs-docs-section">
                     <h2 id="intro7" class="page-header">Animation07 - 사라지는 애니메이션
                         <button type="button" class="btn btn-warning">start</button>                      
                     </h2>
@@ -289,11 +303,18 @@ $(".btn2-3").click(function(){
                             <div class="animation10"><span>10</span></div>                            
                         </div>
                     </div>
-<pre class="line--numbers language-js"><code>   </code></pre>
-                </div>
+<pre class="line--numbers language-js"><code>$("#intro7 > button").click(function(){
+$(".animation10")
+    .animate({left:leftWidth},500,"easeOutQuart")
+    .animate({top:leftWidth},500,"easeOutQuart")
+    .animate({left:"0%"},500,"easeOutQuart")
+    .animate({top:"0%"},500,"easeOutQuart");  
+setInterval(out,4000);          
+});   </code></pre>
+                </div> -->
                 <!-- //Intro7 -->
                 <!-- Intro8 -->
-                <div class="bs-docs-section">
+                <!-- <div class="bs-docs-section">
                     <h2 id="intro8" class="page-header">Animation08 - 콜백함수
                         <button type="button" class="btn btn-warning">start</button>                      
                     </h2>
@@ -312,7 +333,7 @@ $(".animation10")
         alert("도착");
     });            
 })  </code></pre>
-                </div>
+                </div> -->
                 <!-- //Intro8 -->
                 
         </div>
@@ -325,8 +346,11 @@ $(".animation10")
                     <li><a href="#intro2">Animation02</a></li>
                     <li><a href="#intro3">Animation03</a></li>
                     <li><a href="#intro4">Animation04</a></li>
-                    <li><a href="#intro5">Animation05</a></li>
-                    
+                    <li><a href="#intro5">Animation05</a></li>                    
+                    <li><a href="#intro6">Animation06</a></li>                    
+                    <li><a href="#intro7">Animation07</a></li>                    
+                    <li><a href="#intro8">Animation08</a></li>                   
+                                     
                 </ul>
             </div>
         </div>
@@ -406,52 +430,6 @@ $(".animation10")
             gsap.to(".animation04-6", {duration:2, left: leftWidth, rotationY: 360, ease: "bounce.out"})
             gsap.to(".animation04-7", {duration:2, left: leftWidth, rotationY: 360, ease: "elastic.out(1, 0.3)"})
         })
-
-        $("#intro5 > button").click(function(){
-            loop();
-        });
-        function loop() {
-            $(".animation08")
-                .animate({left:leftWidth},"fast")
-                .animate({top:leftHeight},"fast")
-                .animate({left:"0%"},"fast")
-                .animate({top:"0%"},"fast",loop)
-        }
-
-        $("#intro6 > button").click(function(){
-            setInterval(time, 4000);
-        });
-        function time() {
-            $(".animation09")
-                .animate({left:leftWidth},500,"easeOutQuart")
-                .animate({top:leftWidth},500,"easeOutQuart")
-                .animate({left:"0%"},500,"easeOutQuart")
-                .animate({top:"0%"},500,"easeOutQuart");
-        }
-
-        $("#intro7 > button").click(function(){
-            $(".animation10")
-                .animate({left:leftWidth},500,"easeOutQuart")
-                .animate({top:leftWidth},500,"easeOutQuart")
-                .animate({left:"0%"},500,"easeOutQuart")
-                .animate({top:"0%"},500,"easeOutQuart");  
-            setInterval(out,4000);          
-        });
-
-        function out(){
-                $("animation10").clearQueue().hide();
-            }
-        
-            // 8
-        $("#intro8 > button").click(function(){
-            $(".animation10")
-                .animate({left:leftWidth},500,"easeOutQuart")
-                .animate({top:leftWidth},500,"easeOutQuart")
-                .animate({left:"0%"},500,"easeOutQuart")
-                .animate({top:"0%"},500,"easeOutQuart",function(){
-                    alert("도착");
-                });            
-        })  
     </script>
 </body>
 

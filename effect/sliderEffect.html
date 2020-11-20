@@ -87,21 +87,42 @@
                     </script>
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">클리핑 마스크</h2>
-                    <p class="bs-callout bs-callout-info">클리핑 마스크는 레이어 마스크와 달리 상위 레이어의 이미지를 하위 레이어에 클리핑하여 레이어의 모양으로 잘라낸 것처럼 나타내는 기능입니다.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample01.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-md-12">
-                            <a href="#" class="thumbnail">
-                                <img src="img/sample02.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    <h2 id="intro2" class="page-header">sliderEffect-jqeury</h2>
+                    <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
+                    <iframe width="100%" height="560px" src="sliderEffect01-jquery01" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>// 선택자
+const questionAsk = $(".question");
+const questionNum = $(".num");
+const questionBtn = $(".confirm-btn");
+const questionAnswer = $(".confirm-answer");
+const questionEx = $(".confirm-ex");
+
+// 문제정보
+const quizNum = 1
+const quizAsk = "태그 중에서 유일하게 블록구조를 감쌀수 있는 태그는"
+const quizAnswer = "&lt;a&gt;"
+const quizEx = "HTML5에서 &lt;a&gt; 태그는 유일하게 블록 구조를 감쌀수 있다.";
+
+// 문제출력
+questionNum.html(quizNum);
+questionAsk.html(quizAsk);
+questionAnswer.html(quizAnswer);
+questionEx.html(quizEx);
+
+// 정답 숨기기
+questionAnswer.hide();
+questionEx.hide();
+
+// 정답확인
+// 버튼누르면 버튼은 사라지고 정답과해설은 나타난다.
+questionBtn.click(function(){
+questionBtn.hide();
+questionAnswer.show();
+questionEx.show();
+})</code></pre>
+                </div>                
                 <!-- //Intro1 -->
                 <!-- Intro2 -->
                 <div class="bs-docs-section">

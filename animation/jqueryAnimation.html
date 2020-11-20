@@ -366,7 +366,16 @@ function loop() {
                             <div class="animation09"><span>09</span></div>                            
                         </div>
                     </div>
-<pre class="line--numbers language-js"><code>   </code></pre>
+<pre class="line--numbers language-js"><code>$("#intro6 > button").click(function(){
+setInterval(time, 4000);
+});
+function time() {
+$(".animation09")
+    .animate({left:leftWidth},300,"easeOutQuart")
+    .animate({top:leftHeight},300,"easeOutQuart")
+    .animate({left:"0%"},300,"easeOutQuart")
+    .animate({top:"0%"},300,"easeOutQuart");
+}   </code></pre>
                 </div>
                 <!-- //Intro6 -->
                 <!-- Intro7 -->
@@ -380,7 +389,14 @@ function loop() {
                             <div class="animation10"><span>10</span></div>                            
                         </div>
                     </div>
-<pre class="line--numbers language-js"><code>   </code></pre>
+<pre class="line--numbers language-js"><code>$("#intro7 > button").click(function(){
+$(".animation10")
+    .animate({left:leftWidth},500,"easeOutQuart")
+    .animate({top:leftHeight},500,"easeOutQuart")
+    .animate({left:"0%"},500,"easeOutQuart")
+    .animate({top:"0%"},500,"easeOutQuart");  
+setInterval(out,4000);          
+});   </code></pre>
                 </div>
                 <!-- //Intro7 -->
                 <!-- Intro8 -->
@@ -530,9 +546,9 @@ $(".animation10")
         
             // 8
         $("#intro8 > button").click(function(){
-            $(".animation10")
+            $(".animation11")
                 .animate({left:leftWidth},500,"easeOutQuart")
-                .animate({top:leftWidth},500,"easeOutQuart")
+                .animate({top:leftHeight},500,"easeOutQuart")
                 .animate({left:"0%"},500,"easeOutQuart")
                 .animate({top:"0%"},500,"easeOutQuart",function(){
                     alert("도착");
