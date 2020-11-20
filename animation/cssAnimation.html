@@ -463,12 +463,12 @@
 
                 <style>
                     .timing.bg6 {height: 600px;}
-                    .timing.bg6 > div {background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);}
+                    .timing.bg6 > div {background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);}
                     .timing25.normal {animation: move2 4s 5 ease normal;}
-                    .timing26.reverse {animation: move2 2s 5 ease reverse;}
-                    .timing27.alternate {animation: move2 2s 5 ease alternate;}
-                    .timing28.alternate-reverse {animation: move2 2s 5 ease alternate-reverse;}
-                            
+                    .timing25.reverse {animation: move2 4s 5 ease reverse;}
+                    .timing25.alternate {animation: move2 4s 5 ease alternate;}
+                    .timing25.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
+
                     @keyframes move2 {
                         0%   {left: 0; top: 0;}
                         25%  {left: calc(100% - 120px); top: 0;}
@@ -486,28 +486,18 @@
                         <button type="button" class="btn btn-warning start6-4">alternate-reverse</button>
                     </h2>
                     <div class="sample">
-                        <h3><span></span><em class="sr-only">border-radius</em></h3>
+                        <h3><span></span><em class="sr-only">animation-direction</em></h3>
                         <div class="timing bg6">
-                            <div class="timing25"><span>timing25</span></div>                                                                                                                                      
+                            <div class="timing25"><span>timing25</span></div>
                         </div>
-                    </div> 
-<pre class="line-numbers language-css"><code>.timing.bg6 {height: 600px;}
-.timing.bg6 > div {background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);}
-.timing25.normal {animation: move2 4s 5 ease normal;}
-.timing26.reverse {animation: move2 2s 5 ease reverse;}
-.timing27.alternate {animation: move2 2s 5 ease alternate;}
-.timing28.alternate-reverse {animation: move2 2s 5 ease alternate-reverse;}
-        
-@keyframes move2 {
-    0%   {left: 0; top: 0;}
-    25%  {left: calc(100% - 120px); top: 0;}
-    50%  {left: calc(100% - 120px); top: calc(100% - 120px);}
-    75%  {left: 0; top: calc(100% - 120px);}
-    100% {left: 0; top: 0;}
-}                        
+                    </div>
+<pre class="line-numbers language-css"><code>.timing25.normal {animation: move2 4s 5 ease normal;}
+                    .timing25.reverse {animation: move2 4s 5 ease reverse;}
+                    .timing25.alternate {animation: move2 4s 5 ease alternate;}
+                    .timing25.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
 </code></pre> 
                 </div>
-                <!-- //Intro6 -->    
+                <!-- //Intro6 --> 
                 
                 <style>
                     .timing.bg7 > div {background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);}
@@ -697,15 +687,10 @@
         });
 
         $("#intro6 > button").click(function(){
-            $(this).text();
-            $(this).addClass("button");
+            let txt = $(this).text();
+            $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(txt);
         });         
-
-        $(".btn").click(function(){
-            const btn1 = $(this).text();
-            $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(btn1);
-        });
-
+       
         $ (".start7").click(function(){
             $(".timing.bg7 > div").addClass("show");                            
         });

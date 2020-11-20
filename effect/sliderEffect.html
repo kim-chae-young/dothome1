@@ -79,7 +79,7 @@
     </div>
     <div class="container bs-docs-container">
         <div class="row">
-            <div class="col-md-9" role="main">
+            <div class="col-md-12" role="main">
                 <!-- 배너광고 -->
                 <script src="https://ads-partners.coupang.com/g.js"></script>
                     <script>
@@ -89,101 +89,62 @@
                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header">sliderEffect-jqeury</h2>
                     <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
-                    <iframe width="100%" height="560px" src="sliderEffect01-jquery01" frameborder="0"></iframe>
+                    <iframe src="sliderEffect01-jquery.html" width="100%" height="600px" frameborder="0"></iframe>
                         <div class="javascriptSource">
                             <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code>// 선택자
-const questionAsk = $(".question");
-const questionNum = $(".num");
-const questionBtn = $(".confirm-btn");
-const questionAnswer = $(".confirm-answer");
-const questionEx = $(".confirm-ex");
+<pre class="line--numbers language-js"><code> const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
 
-// 문제정보
-const quizNum = 1
-const quizAsk = "태그 중에서 유일하게 블록구조를 감쌀수 있는 태그는"
-const quizAnswer = "&lt;a&gt;"
-const quizEx = "HTML5에서 &lt;a&gt; 태그는 유일하게 블록 구조를 감쌀수 있다.";
+let currentIndex = 0;//현재첫번째 보이는 이미지
+let sliderCount = slider.length; //이미지개수
 
-// 문제출력
-questionNum.html(quizNum);
-questionAsk.html(quizAsk);
-questionAnswer.html(quizAnswer);
-questionEx.html(quizEx);
+//3초에 한번씩 함수실행
+setInterval(function(){
+    let nextIndex = (currentIndex + 1) % sliderCount;
 
-// 정답 숨기기
-questionAnswer.hide();
-questionEx.hide();
+    slider.eq(currentIndex).fadeOut(); //첫번째 이미지 사라짐
+    slider.eq(nextIndex).fadeIn(); //두번째 이미지 사라짐
 
-// 정답확인
-// 버튼누르면 버튼은 사라지고 정답과해설은 나타난다.
-questionBtn.click(function(){
-questionBtn.hide();
-questionAnswer.show();
-questionEx.show();
-})</code></pre>
-                </div>                
+    console.log("currentIndex : " + currentIndex);
+    console.log("currentIndex : " + nextIndex);
+
+    currentIndex = nextIndex;
+},3000);)</code></pre>
+                </div>  
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
+const sliderimg = document.querySelector(".slider-img");
+const slider = document.querySelectorAll(".slider");
+
+let currentIndex = 0; //현재보이는 이미지
+let sliderCount = slider.length; //이미지개수
+
+setInterval(() => {
+    let nextIndex = (currentIndex + 1) % sliderCount;
+                    // (0 + 1) % 5 -> 1
+                    // (1 + 1) % 5 -> 2
+                    // (2 + 1) % 5 -> 3
+                    // (3 + 1) % 5 -> 4
+                    // (4 + 1) % 5 -> 0
+                    // (0 + 1) % 5 -> 1
+                    // (1 + 1) % 5 -> 2
+    // slider[currentIndex].style.display = "none";
+    // slider[nextIndex].style.display = "block";
+
+    slider[currentIndex].style.opacity = "0";
+    slider[nextIndex].style.opacity = "1";
+
+    currentIndex = nextIndex           
+},3000);</code></pre>               
                 <!-- //Intro1 -->
                 <!-- Intro2 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">레이어 마스크</h2>
-                    <p class="bs-callout bs-callout-info">레이어 마스크는 선택 영역 모양으로 이미지를 오린 듯한 결과를 만들면서 원본 레이어를 보호하는 기능이며, 알파 채널은 선택 영역을 계속해서 사용할 수 있도록 
-                        회색 음영 이미지로 저장해 두는 기능입니다. </p>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-1.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-2.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-3.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-4.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-5.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-6.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-7.jpg">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="../photoshop/img/sample03-8.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- //Intro2 -->
         </div>
-        <!-- //col-md-9 -->
-        <!-- //col-md-3 -->
-        <div class="col-md-3">
-            <div class="bs-sidebar hidden-print" role="complementary">
-                <ul class="nav bs-sidenav">
-                    <li><a href="#intro1">레이어 마스크</a></li>
-                </ul>
-            </div>
-        </div>
-        <!--//col-md-3 -->
+        <!-- //col-md-12 -->
+        
     </div>
     <!-- //row -->
     </div>
