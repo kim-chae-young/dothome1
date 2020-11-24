@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        a {text-decoration: none;}
+        em {font-style: normal;}
+        ul, li {list-style: none;}
+        #wrap {font-family: 'NanumSquare', sans-serif !important;}
+        #header {height: 86px; position: fixed; z-index: 1000; width: 100%; top: 0; background: #fff;}
+        .header .logo {
+            width: 145px; height: 22px; 
+            background: url(img/sp_svg_icon.png);
+            background-position: -4px -62px;
+            position: absolute; left: 0px; top: 15px;
+            margin-top: 15px;
+            display: block;
+        }
+        .header .menu {float: left; padding: 30px 0 0 350px;}
+        .header .menu li {display: inline-block; width: 110px; height: 15px; text-align: center; }
+        .header .menu li a {font-size: 15px; color: #000;}
+        .header .button {float: right; position: relative; top: 25px;}
+        .header .button .btn1 {float: left; border-radius:5px; font-weight: 900; text-align: center; font-size: 12px; height: 20px; margin-right: 20px;}
+        .header .button .btn2 {float: left; border-radius:5px; font-weight: 900; text-align: center; width: 80px; height: 20px; font-size: 12px;}
+        .header .button a {color: #000; border: 1px solid #ccc; padding: 10px;}
+
+        #banner {background: url(img/bg_cst.png) no-repeat; background-size:cover; margin-top: 80px;}
+        .banner {padding: 150px 0px 0; height: 450px; margin-left: 100px;}       
+        .banner .title {font-size: 46px; line-height: 64px; color: #fff;}
+        .banner p {margin-top: 17px; font-size: 18px; line-height: 32px; color: #fff;}
+        .banner .button {margin-top: 50px; }
+        .banner .button a {
+            display: inline-block; 
+            width: 210px; height: 60px; 
+            line-height: 58px; 
+            border: 1px solid rgba(255,255,255,0.3); 
+            border-radius: 4px; font-size: 18px;
+            box-sizing: border-box; color: #fefefe; 
+            text-align: center;
+        }
+        .banner .button a:last-child {margin-left: 1px;}
+
+        #contents {}
+        #cont1 {}
+        .cont1 {margin: 0 auto; padding: 124px 0 220px; text-align: center;}
+        .cont1 .text {}
+        .cont1 .text h2 {font-size: 42px; line-height: 44px; color: #000;}
+        .cont1 .text h2 em {color: #05d686;}
+        .cont1 .text p {margin-top: 27px; font-size: 20px; line-height: 24px;}
+        .cont1 .box {margin-top: 91px;}
+        .cont1 .box img {vertical-align: top;}
+        .cont1 .button {margin-top: 40px;}
+        .cont1 .button a {display: inline-block; width: 240px; height: 60px; line-height: 60px; border-radius: 4px; background-color: #05d686; font-size: 20px; color: #fff;}
+        
+        #cont2 {text-align: center;}
+        .cont2 {margin-top: 205px;}
+        .cont2 h1 {font-size: 42px; line-height: 44px; color: #000;}
+        .cont2 h1 span {color: #05d686;}
+        .cont2 p {margin-top: 27px; font-size: 20px; line-height: 34px;}
+        .cont2 .imgbox {margin: 60px 0 0 10px;}
+        .cont2 .imgbox .img1 {display: inline-block; vertical-align: top; position: relative;}
+        .cont2 .imgbox .img2 {display: inline-block; vertical-align: top; margin-left: 73px; position: relative;}
+        .cont2 .imgbox .img3 {display: inline-block; vertical-align: top; margin-left: 57px;}
+        
+        .cont2 .imgbox .img1 .img11 {background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png); width: 266px; height: 178px;}
+        .cont2 .imgbox .img2 .img22 {background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png); background-position: -270px 0; width: 266px; height: 178px;}
+        .cont2 .imgbox .img3 .img33 {background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png); background-position: 0 -182px; width: 266px; height: 178px;}
+        .cont2 .imgbox .img1::after {background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png); background-position: -986px -267px; width: 20px; height: 31px; position: absolute; top: 76px; right: -53px; content: '';}
+        .cont2 .imgbox .img2::after {display: inline-block; background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png); width: 266px; height: 178px; background-position: -986px -267px; width: 20px; height: 31px; position: absolute; top: 76px; right: -40px; content: '';}
+        
+        .cont2 .imgbox .img1 em {display: block; margin-top: 28px; font-size: 26px; line-height: 40px;}
+        .cont2 .imgbox .img2 em {display: block; margin-top: 28px; font-size: 26px; line-height: 40px;}
+        .cont2 .imgbox .img3 em {display: block; margin-top: 28px; font-size: 26px; line-height: 40px;}
+        .cont2 .imgbox .img1 p {margin-top: 9px; font-size: 20px; line-height: 32px; color: #767676;}
+        .cont2 .imgbox .img2 p {margin-top: 9px; font-size: 20px; line-height: 32px; color: #767676;}
+        .cont2 .imgbox .img3 p {margin-top: 9px; font-size: 20px; line-height: 32px; color: #767676;}
+
+        .cont3 {margin: 140px; text-align: center;}
+        .cont3 .text {margin-top: 27px;}
+        .cont3 .text p { font-size: 20px; line-height: 34px;}
+        .cont3 ul {margin-top: 37px;}
+        .cont3 .ai {}
+        .cont3 .ai h1 {
+            background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png);
+            background-position: 0 -422px;
+            width: 144px; height: 144px;
+        }
+        .cont3 li {display: inline-block; vertical-align: top; margin-left: -30px;}
+        .cont3 .naver {margin-left: 107px;}
+        .cont3 .fun {margin-left: 130px;}
+        .cont3 li em {display: block; margin-top: 27px; font-size: 26px; line-height: 40px;}
+        .cont3 li h1 {margin: 0 auto;}
+        .cont3 li span {display: block; font-size: 20px; line-height: 40px; color: rgba(118,118,118,0.9);}
+        .cont3 li p {margin-top: 20px; font-size: 20px; line-height: 32px; color: #767676;}
+        .cont3 .naver h1 {
+            background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png);
+            background-position: -148px -422px;
+            width: 144px; height: 144px;
+            display: inline-block;
+        }
+        .cont3 .fun h1 {
+            background: url(https://static-clova.pstatic.net/static/70fd2ea/img/sprite/sp_platform.png);
+            background-position: -270px -182px;
+           display: inline-block;
+            width: 144px; height: 144px;
+        }
+
+        .cont4 {margin: 206px; text-align: center;}
+        .cont4 .text {margin-top: 27px;}
+        .cont4 .text p {font-size: 20px; line-height: 34px;}
+        .cont4 .button {margin-top: 33px;}
+        .cont4 .button a {display: inline-block; width: 240px;height: 60px; line-height: 60px; border-radius: 4px; background-color: #05d686; font-size: 20px; color: #fff;}
+       
+        #footer {height: 132px; background-color: #191919; color: #666; font-size: 13px; line-height: 14px;}
+
+        .footer {text-align: center;}
+        .footer .logo {
+            background: url(img/sp_svg_icon.png);
+            background-position: -4px -34px; 
+            width: 145px; height: 20px; display: block;
+            position: absolute; left: 0; top: 30px; margin-top: 15px;
+        }
+        
+        .footer li { vertical-align: top; padding-bottom: 15px; display: inline-block;}
+        .footer .left {display: inline; float: left; padding-top: 80px;}
+        .footer .right {display: inline; float: right; padding-top: 80px;}
+        .footer .center {display: inline-block; padding-top: 80px; margin-left: 198px;}
+        
+        
+       
+      
+        
+        .container {margin: 0 auto; width: 1200px; height: inherit; position: relative;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header">
+                    <h1 class="logo"></h1>
+                    <ul class="menu">
+                        <li><a href="#">기술.솔루션</a></li>
+                        <li><a href="#">제품</a></li>
+                        <li><a href="#">플랫폼</a></li>
+                        <li><a href="#">파트너</a></li>
+                        <li><a href="#">리서치</a></li>
+                    </ul>               
+                    <div class="button">
+                         <a href="#" class="btn1">biz start</a>
+                         <a href="#" class="btn2">비즈니스 문의</a>
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="banner">                    
+                    <h2 class="title">CLOVA Skill Tools</h2>
+                    <p>클로바는 CLOVA Extensions Kit와 Chatbot Builder를 제공하여<br>새로운 Skill을 쉽고 빠르게 클로바에 추가할 수 있도록 도와드립니다.<br>클로바에서 제공하는 개발자 도구들을 통해 새로운 음성 기술을 개발하고<br>
+                        특별한 서비스로 더 많은 고객을 만나세요.</p>   
+                    <div class="button">
+                        <a href="#">콘솔 바로가기</a>
+                        <a href="#">챗봇 빌더 바로가기</a>
+                    </div>                       
+                </div>
+                
+            </div>
+        </div>
+        <div id="contents">
+            <div id="cont1">
+                <div class="container">
+                    <div class="cont1">
+                        <div class="text">
+                            <h2><em>CLOVA</em> Extensions Kit</h2>
+                            <P>CLOVA Extensions Kit는 외부 서비스나 IoT 기기를 제어할 수 있는<br>CLOVA Skill’을 서비스할 수 있도록 필요한 도구와 인터페이스를 제공합니다.</P>
+                        </div>                 
+                        <div class="box">
+                            <img src="https://static-clova.pstatic.net/static/70fd2ea/img/platform/diagram_cek.png" alt="">            
+                        </div>
+                        <div class="button">
+                            <a href="#">콘솔 바로가기</a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div id="cont2"> 
+                <div class="container">
+                    <div class="cont2">
+                        <h1><span>CLOVA</span>Chatbot Builder</h1>
+                        <p>Chatbot Builder를 통해 개발자가 아닌 일반 사용자도<br>
+                            쉽고 빠르게 챗봇을 만들고 서비스 할 수 있습니다.</p>
+                        <ul class="imgbox">
+                            <li class="img1">
+                                <h1 class="img11"></h1>
+                                <em>대화 등록</em>
+                                <p>10개~15개의 대화 등록<br>
+                                    적은 데이터로도 챗봇 생성 가능</p>
+                            </li>                            
+                            <li class="img2">
+                                <h1 class="img22"></h1>
+                                <em>학습</em>
+                                <p>방대한 네이버 DB와 함께<br>
+                                    빠르게 학습하고 바로 확인 가능  </p>
+                            </li>                  
+                            <li class="img3">
+                                <h1 class="img33"></h1>
+                                <em>서비스 연결</em>
+                                <p>스마트 스피커, LINE, 네이버 톡톡에서<br>
+                                음성과 텍스트 모두 즉시 연동</p>                           
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="cont3">
+                <div class="container">
+                    <div class="cont3">
+                        <div class="text">
+                            <p>CLOVA Chatbot은 기업의 상담 콜센터를 대체하고,<br>
+                                사용자의 흥미를 자극하는 재미있는 콘텐츠로 만들어지고 있습니다</p>
+                        </div>
+                        <ul>
+                            <li class="ai">
+                                <h1></h1>
+                                <em>마케팅 챗봇</em>
+                                <span>U+ 우리집AI β</span>
+                                <p>유플러스 스피커 사용 고객에게<br>
+                                    우리집AI 상품을 소개해주는 챗봇</p>
+                            </li>
+                            <li class="naver">
+                                <h1></h1>
+                                <em>정보성 챗봇 </em>
+                                <span>네이버 고객센터 β</span>
+                                <p>네이버 주요 서비스에 대해<br>  도움말을 알려주는 챗봇           </p>
+                            </li>
+                            <li class="fun">
+                                <h1></h1>
+                                <em>FUN 챗봇</em>
+                                <span>동물소리 번역기</span>
+                                <p>동물 소리 발화를 유도하는<br>
+                                    사용 재미를 주는 챗봇</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="cont4">
+                <div class="container">
+                    <div class="cont4">
+                        <div class="text">
+                            <p>클로바 챗봇 빌더에서 나만의 챗봇을 만들어 보세요.</p>
+                        </div>
+                        <div class="button">
+                            <a href="#">챗봇 빌더 바로가기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer">
+                    <h1 class="logo"></h1>
+                    <ul class="left">
+                        <li>고객센터 1833-5387 </li>
+                        <li>09:00- 18:00 (주말, 공휴일 휴무) </li>
+                    </ul>
+                    <ul class="center">
+                        <li>Powered by NAVER · LINE</li>
+                    </ul>
+                    <ul class="right">
+                        <li>공지사항</li>
+                        <li>이용약관</li>
+                        <li>CLOVA 채용안내</li>
+                        <li>CLOVA JP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

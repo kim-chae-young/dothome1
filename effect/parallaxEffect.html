@@ -91,31 +91,26 @@
                 
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">parallax-jquery</h2>
+                    <h2 id="intro2" class="page-header">parallax01</h2>
                     <p class="bs-callout bs-callout-info">scrollTop과 OffsetTop을 이용하여 패럴랙스 스크롤링 효과를 완성하였습니다.</p>
-                    <p><a class="btn btn-primary btn-lg" href="parllax01-jquery.html" role="button">확인하기</a></p>
-<pre class="line-numbers language-js"><code>$(window).scroll(function(){
-    const scrollTop = $(window).scrollTop() + $(window).height();
-    $(".scrollTop").text(parseInt(scrollTop));
-    $(".content-item").each(function(num){
-        $(".s"+(num+1)+"OffsetTop").text( parseInt($("#section"+(num+1)).offset().top) );
-        if( scrollTop > $(this).offset().top ){
-             $(".s"+(num+1)+"OffsetTop").css("color","red");
-             $(this).addClass("show");
-         } else {
-             $(".s"+(num+1)+"OffsetTop").css("color","white");
-             $(this).removeClass("show");
-         }
-     });       </code></pre>
-                    
-                </div>
-                <!-- //Intro1 -->
-                <!-- Intro2 -->
-                <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">parallax-javascript</h2>
-                    <p class="bs-callout bs-callout-info">scrollTop과 OffsetTop을 이용하여 패럴랙스 스크롤링 효과를 완성하였습니다.</p>
-                    <p><a class="btn btn-primary btn-lg" href="parallax01-javascript.html" role="button">확인하기</a></p>
-<pre class="line-numbers language-js"><code>$(window).scroll(function(){
+                    <iframe src="parllax01-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line-numbers language-js"><code> // 숫자 for문
+    // $(window).scroll(function(){
+    //     const scrollTop = $(window).scrollTop() + $(window).height();
+  
+    // for(let i=1; i&lt10; i++){
+    //     if(scrollTop > $("#section"+i).offset().top) {
+    //         $(".s" +i+ "OffsetTop").css("color","red");
+    //     } else {
+    //        $(".s" +i+ "OffsetTop").css("color","white");
+    //     }
+
+    // }
+
+    // each문
+    $(window).scroll(function(){
     const scrollTop = $(window).scrollTop() + $(window).height();
         $(".scrollTop").text(parseInt(scrollTop));
 
@@ -128,7 +123,195 @@
                 $(".s"+(num+1)+"OffsetTop").css("color","white");
             }
         });
-    });</code></pre>
+
+    });
+
+    // 그림 for문
+    // $(window).scroll(function(){
+    // const scrollTop = $(window).scrollTop() + $(window).height();
+    // for(let i=1; i&lt10; i++){
+    //     $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top));
+    //     if(scrollTop > $("#section"+i).offset().top){
+    //         $("#section"+i).addClass("show");
+    //     } else {
+    //         $("#section"+i).removeClass("show");
+    //     }
+    // }
+
+    // 그림 each
+    $(window).scroll(function(){
+    const scrollTop = $(window).scrollTop() + $(window).height();
+    $(".scrollTop").text(parseInt(scrollTop));
+    $(".content-item").each(function(num){
+        $(".s"+(num+1)+"OffsetTop").text( parseInt($("#section"+(num+1)).offset().top) );
+        if( scrollTop > $(this).offset().top ){
+            $(".s"+(num+1)+"OffsetTop").css("color","red");
+            $(this).addClass("show");
+        } else {
+            $(".s"+(num+1)+"OffsetTop").css("color","white");
+            $(this).removeClass("show");
+        }
+    });      </code></pre>
+                            <h3 class="btn btn-primary btn-sm">JavaScript</h3>
+<pre class="line-numbers language-js"><code>// h1 클릭red
+/*$("h1").click(function(){
+    $("*").css("color","red");
+});
+$("h1").click(function(){
+alert($("h1").text());
+});*/
+// $(window).scroll(function(){
+//    const scrollTop = $(window).scrollTop() + $(window).height();            
+// });
+window.addEventListener("scroll",function(){
+    let pageYOffset = window.pageYOffset;
+
+    document.querySelector(".pageYOffset").innerText = pageYOffset;
+    document.querySelector(".s1OffsetTop").innerText = document.getElementById("section1").offsetTop;
+    document.querySelector(".s2OffsetTop").innerText = document.getElementById("section2").offsetTop;
+    document.querySelector(".s3OffsetTop").innerText = document.getElementById("section3").offsetTop;
+    document.querySelector(".s4OffsetTop").innerText = document.getElementById("section4").offsetTop;
+    document.querySelector(".s5OffsetTop").innerText = document.getElementById("section5").offsetTop;
+    document.querySelector(".s6OffsetTop").innerText = document.getElementById("section6").offsetTop;
+    document.querySelector(".s7OffsetTop").innerText = document.getElementById("section7").offsetTop;
+    document.querySelector(".s8OffsetTop").innerText = document.getElementById("section8").offsetTop;
+    document.querySelector(".s9OffsetTop").innerText = document.getElementById("section9").offsetTop;
+
+    // 글씨색 나오기
+    if(pageYOffset > document.getElementById("section1").offsetTop){
+        document.querySelector(".s1OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s1OffsetTop").style.color="white"
+    }
+
+    if(pageYOffset > document.getElementById("section2").offsetTop){
+        document.querySelector(".s2OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s2OffsetTop").style.color="white"
+    }
+
+    if(pageYOffset > document.getElementById("section3").offsetTop){
+        document.querySelector(".s3OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s3OffsetTop").style.color="white"
+    }
+
+    if(pageYOffset > document.getElementById("section4").offsetTop){
+        document.querySelector(".s4OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s4OffsetTop").style.color="white"
+    }
+
+    if(pageYOffset > document.getElementById("section5").offsetTop){
+        document.querySelector(".s5OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s5OffsetTop").style.color="white"
+    }
+    if(pageYOffset > document.getElementById("section6").offsetTop){
+        document.querySelector(".s6OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s6OffsetTop").style.color="white"
+    }
+    if(pageYOffset > document.getElementById("section7").offsetTop){
+        document.querySelector(".s7OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s7OffsetTop").style.color="white"
+    }
+    if(pageYOffset > document.getElementById("section8").offsetTop){
+        document.querySelector(".s8OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s8OffsetTop").style.color="white"
+    }
+    if(pageYOffset > document.getElementById("section9").offsetTop){
+        document.querySelector(".s9OffsetTop").style.color="red"
+    } else {
+        document.querySelector(".s9OffsetTop").style.color="white"
+    }
+
+    for(let i=1; i&lt10; i++){
+    $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top));
+    if(scrollTop > $("#section"+i).offset().top){
+        $("#section"+i).add("show");
+    } else {
+        $("#section"+i).remove("show");
+    }
+}
+});</code></pre>                    
+                </div>
+                <!-- //Intro1 -->
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">parallax02</h2>
+                    <p class="bs-callout bs-callout-info">scrollTop과 OffsetTop을 이용하여 패럴랙스 스크롤링 효과를 완성하였습니다.</p>
+                    <iframe src="parallax02-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line-numbers language-js"><code>$(window).scroll(function(){
+    let scrollTop = $(window).scrollTop();
+
+//    let offset1 = (scrollTop - $("#section1").offset().top);
+//    let offset2 = (scrollTop - $("#section2").offset().top);
+//    let offset3 = (scrollTop - $("#section3").offset().top);
+//    let offset4 = (scrollTop - $("#section4").offset().top);
+//    let offset5 = (scrollTop - $("#section5").offset().top);
+//    let offset6 = (scrollTop - $("#section6").offset().top);
+//    let offset7 = (scrollTop - $("#section7").offset().top);
+//    let offset8 = (scrollTop - $("#section8").offset().top);
+//    let offset9 = (scrollTop - $("#section9").offset().top);
+
+//     // 출력용
+//     $("#section1 .content-item-desc").css({transform:"translateX("+offset1+"px)"})
+//     $("#section2 .content-item-desc").css({transform:"translateX("+offset2+"px)"})
+//     $("#section3 .content-item-desc").css({transform:"translateX("+offset3+"px)"})
+//     $("#section4 .content-item-desc").css({transform:"translateX("+offset4+"px)"})
+//     $("#section5 .content-item-desc").css({transform:"translateX("+offset5+"px)"})
+//     $("#section6 .content-item-desc").css({transform:"translateX("+offset6+"px)"})
+//     $("#section7 .content-item-desc").css({transform:"translateX("+offset7+"px)"})
+//     $("#section8 .content-item-desc").css({transform:"translateX("+offset8+"px)"})
+//     $("#section9 .content-item-desc").css({transform:"translateX("+offset9+"px)"})
+
+    // 출력용 for
+    // for(let i = 0; i&lt10; i++){
+    //     let offset = (scrollTop - $("#section"+i).offset.top) *0.2;
+    //     $("#section"+i+".content-item-desc").css({transform:"translateX("+offset+"px)"})
+    // }
+
+        // each문
+    $(".content-item").each(function(){
+       let offset1 = (scrollTop - $(this).offset().top) * 0.1;
+       let offset2 = (scrollTop - $(this).offset().top) * 0.2;
+
+       $(this).find(".content-item-desc").css({transform:"translateY("+ -offset2+"px)"})
+       $(this).find(".content-item-num").css({transform:"translateY("+ offset1+"px)"})
+       $(this).find(".content-item-img").css({transform:"translateY("+ offset2+"px)"})               
+    })
+})</code></pre>
+                            <h3 class="btn btn-primary btn-sm">JavaScript</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
+const sliderimg = document.querySelector(".slider-img");
+const slider = document.querySelectorAll(".slider");
+
+let currenIndex = 0;
+let sliderCount = slider.length;
+let sliderWidth = sliderWrap.scrollWidth/-5;
+
+setInterval(function(){
+//    if( currenIndex &lt sliderCount -1){
+//         currenIndex++;
+//     } else {
+//         currenIndex = 0;
+//     }        
+    
+    currenIndex &lt sliderCount -1 ? currenIndex++ : currenIndex =0;
+
+    let sliderPosition = currenIndex * sliderWidth +"px";
+    // sliderimg.animate({left:sliderPosition},400); 
+    sliderimg.style.left = sliderPosition;
+    sliderimg.style.transition = "all 0.6s";
+
+    gsap.to(sliderimg, {duration: 0.6, left:sliderPosition, ease: "exop.out"}); 
+
+},3000)</code></pre>
                 </div>
                 <!-- //Intro2 -->
                 <!-- figma -->
