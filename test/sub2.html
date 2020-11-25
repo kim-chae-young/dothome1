@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        a {text-decoration: none;}
+        em {font-style: normal;}
+        ul, li {list-style: none;}
+        #wrap {font-family: 'NanumSquare', sans-serif !important;}
+        #header {height: 86px; position: fixed; z-index: 1000; width: 100%; top: 0; background: #fff;}
+
+        .container {margin: 0 auto; width: 1200px; height: inherit; position: relative;}
+
+        .header .logo {
+            width: 145px; height: 22px; 
+            background: url(img/sp_svg_icon.png);
+            background-position: -4px -62px;
+            position: absolute; left: 0px; top: 15px;
+            margin-top: 15px;
+            display: block;
+        }
+        .header .menu {float: left; padding: 30px 0 0 350px;}
+        .header .menu li {display: inline-block; width: 110px; height: 15px; text-align: center; }
+        .header .menu li a {font-size: 15px; color: #000;}
+        .header .button {float: right; position: relative; top: 25px;}
+        .header .button .btn1 {float: left; border-radius:5px; font-weight: 900; text-align: center; font-size: 12px; height: 20px; margin-right: 20px;}
+        .header .button .btn2 {float: left; border-radius:5px; font-weight: 900; text-align: center; width: 80px; height: 20px; font-size: 12px;}
+        .header .button a {color: #000; border: 1px solid #ccc; padding: 10px;}
+
+        #banner {height: 670px; margin-top: -90px; background: #11172d;}
+        .banner {}
+        .banner .bg {}
+        .banner .bg .bg1 {
+            background:url(https://static-clova.pstatic.net/static/4b722fb/img/research/research_intro_main_1.png) 50% 0 no-repeat;
+            background-size:cover;
+            animation: change 15s ease-in-out infinite;
+        }        
+        @keyframes change {
+            0% {opacity: 0;}
+            10% {opacity: 1;}
+            20% {opacity: 1;}
+            30% {opacity: 1;}
+            40% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        .banner .bg .bg2 {
+            background: url(https://static-clova.pstatic.net/static/4b722fb/img/research/research_intro_main_2.png);
+            background-size:cover;
+        }
+        .banner .bg .bg3 {
+            background: url(https://static-clova.pstatic.net/static/4b722fb/img/research/research_intro_main_3.png);
+            background-size:cover;
+        }
+        .banner .text {margin: 0 auto; padding: 183px 0 0 105px; z-index: 20; text-align: left;}
+        .banner .text h2 {}
+        .banner .text h2 {}
+
+        #footer {height: 132px; background-color: #191919; color: #666; font-size: 13px; line-height: 14px;}
+
+        .footer {text-align: center;}
+        .footer .logo {
+            background: url(img/sp_svg_icon.png);
+            background-position: -4px -34px; 
+            width: 145px; height: 20px; display: block;
+            position: absolute; left: 0; top: 30px; margin-top: 15px;
+        }
+        
+        .footer li { vertical-align: top; padding-bottom: 15px; display: inline-block;}
+        .footer .left {display: inline; float: left; padding-top: 80px;}
+        .footer .right {display: inline; float: right; padding-top: 80px;}
+        .footer .center {display: inline-block; padding-top: 80px; margin-left: 198px;}  
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header">
+                    <h1 class="logo"></h1>
+                    <ul class="menu">
+                        <li><a href="#">기술.솔루션</a></li>
+                        <li><a href="#">제품</a></li>
+                        <li><a href="#">플랫폼</a></li>
+                        <li><a href="#">파트너</a></li>
+                        <li><a href="#">리서치</a></li>
+                    </ul>               
+                    <div class="button">
+                         <a href="#" class="btn1">biz start</a>
+                         <a href="#" class="btn2">비즈니스 문의</a>
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="banner">
+                    <div class="bg">
+                        <div class="bg1"></div>
+                        <div class="bg2"></div>
+                        <div class="bg3"></div>
+                    </div>
+                    <div class="text">
+                        <h2>Research Areas</h2>
+                        <p>CLOVA AI Research 는 네이버와 라인이 함께 만드는<br>
+                            오감인지 AI플랫폼을 더욱 스마트하게 만들기 위한<br>
+                            머신러닝/딥러닝 기반의 AI 선행 기술을 연구 개발하는 조직입니다.</p>
+                    </div>
+                    <div class="button">
+                        <a href="#">RESEARCH VIDEO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer">
+                    <h1 class="logo"></h1>
+                    <ul class="left">
+                        <li>고객센터 1833-5387 </li>
+                        <li>09:00- 18:00 (주말, 공휴일 휴무) </li>
+                    </ul>
+                    <ul class="center">
+                        <li>Powered by NAVER · LINE</li>
+                    </ul>
+                    <ul class="right">
+                        <li>공지사항</li>
+                        <li>이용약관</li>
+                        <li>CLOVA 채용안내</li>
+                        <li>CLOVA JP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
