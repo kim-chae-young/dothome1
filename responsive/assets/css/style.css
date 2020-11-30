@@ -280,6 +280,14 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .video {position: relative; width: 100%; padding-bottom: 56.25%;}
 .video iframe {position: absolute; width: 100%; height: 100%; border: 0;}
 
+/* cont-right */
+.side1 {transition: all 0.3s ease;}
+.side1 img:hover {box-shadow: 0 0 0 3px rgba(63, 199, 22, 0.9)}
+.side2 {transition: all 0.3s ease;}
+.side2 img:hover {box-shadow: 0 0 0 3px rgba(191, 131, 75, 0.9)}
+.side3 {transition: all 0.3s ease;}
+.side3 img:hover {box-shadow: 0 0 0 3px rgba(191, 75, 191, 0.9)}
+
 /* footer */
 .footer {text-align: center; padding: 30px 50px;}
 .footer li {display: inline; padding: 0 7px 0 10px; word-break: keep-all; position: relative;}
