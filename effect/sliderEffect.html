@@ -309,7 +309,198 @@ sliderBtn.find(".next").click(function(){
 <pre class="line--numbers language-js"><code></code></pre>
                         </div>
                 </div>
-                <!-- //Intro5 -->              
+                <!-- //Intro5 --> 
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">sliderEffect06</h2>
+                    <p class="bs-callout bs-callout-info">삼단 slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect06-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
+const sliderBtn = $(".slider-btn");
+
+let sliderCount = slider.length;
+let sliderWidth = slider.outerWidth();
+let sliderShowNumber = 3;
+let currentIndex = 0; 
+
+let sliderCopy = $(".slider:lt("+sliderShowNumber+")").clone();
+sliderimg.append(sliderCopy);
+
+function moveLeft(){
+    if(currentIndex == 0){  
+        currentIndex = sliderCount;
+        sliderimg.css("margin-left", sliderWidth * -currentIndex);
+    }
+    currentIndex--;
+    sliderimg.stop().animate({ "margin-left": -sliderWidth * currentIndex }, 400);
+}
+
+function moveRight(){
+    if(currentIndex == sliderCount){  
+        currentIndex = 0;
+        sliderimg.css("margin-left", currentIndex);
+    }
+    currentIndex++;
+    sliderimg.stop().animate({ "margin-left": -sliderWidth * currentIndex }, 400);
+}
+
+//버튼 클릭하기
+sliderBtn.on("click","a",function(){
+    if( $(this).hasClass("prev") ){
+        moveLeft();
+    } else {
+        moveRight();
+    }
+});</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro6 --> 
+                <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">sliderEffect07</h2>
+                    <p class="bs-callout bs-callout-info">버튼과 닷을 이용한 slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect07-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
+const sliderBtn = $(".slider-btn");
+const sliderDot = $(".slider-dot")
+
+let sliderCount = slider.length;
+let sliderWidth = slider.outerWidth();
+let sliderHeight = slider.outerHeight();
+let sliderTotalWidth = sliderWidth * sliderCount;
+let currentIndex = 0;
+let dotIndex = "";
+
+sliderimg.css({width: sliderTotalWidth, height:sliderHeight});
+
+// 이미지움직이기
+function gotoSlider(index){
+    sliderimg.animate({left: -sliderWidth * index},400);
+    currentIndex = index;
+    sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+}
+
+// 이미지개수만큼 닷버튼 만들기
+slider.each(function(index){
+    dotIndex += "<a href='#'></a>";
+    // dotIndex += "<a href='#'>"+(index+1)+"</a>";
+    // let name = $(this).find("img").attr("alt");
+})
+sliderDot.html(dotIndex);
+sliderDot.find("a").eq(0).addClass("active");
+
+// 닷버튼 클릭
+sliderDot.on("click","a", function(e){
+    e.preventDefault();
+    gotoSlider($(this).index());
+    
+});
+
+// 버튼클릭
+sliderBtn.on("click","a",function(e){
+    e.preventDefault();
+    let nextIndex = (currentIndex +1) % sliderCount;
+    let prevIndex = (currentIndex -1) % sliderCount;
+    if(currentIndex ==0) prevIndex = sliderCount -1;
+
+    // console.log("nextIndex:" + nextIndex)
+    console.log("prevIndex:" + prevIndex)
+
+    if($(this).hasClass("prev")){
+        gotoSlider(-1);
+    } else {
+        gotoSlider(nextIndex);
+    }
+});</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro7 --> 
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">sliderEffect08</h2>
+                    <p class="bs-callout bs-callout-info">버튼과 닷을 이용한 slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect08-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+    const sliderImg = $(".slider-img");
+    const slider = $(".slider");
+    const sliderBtn = $(".slider-btn");
+    const sliderDot = $(".slider-dot");
+
+    let sliderCount = slider.length;
+    let sliderWidth = slider.outerWidth();
+    let sliderHeight = slider.outerHeight();
+    let sliderTotalWidth = sliderWidth * sliderCount;
+    let currentIndex = 0;
+    let dotIndex = "";
+
+    sliderImg.css({ width: sliderTotalWidth, height: sliderHeight });
+
+    //이미지 움직이기
+    function gotoSlider(index){
+        sliderImg.animate({ left: -sliderWidth * index }, 400);
+        currentIndex = index;
+        sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+    }
+
+    //이미지 갯수만큼 닷 버튼 만들기
+    slider.each(function(index){
+        //dotIndex += "&lt;a href='#'&gt;&lt;/a&gt;";
+        //dotIndex += "&lt;a href='#'&gt;"+ (index+1) +"&lt;/a&gt;";
+        //let name = $(this).find("img").attr("alt");
+        //dotIndex += "&lt;a href='#'&gt;"+ name +"&lt;/a&gt;";
+        let sliderName = $(this).find("img").attr("alt");
+        let sliderSrc = $(this).find("img").attr("src");
+        dotIndex += "&lt;a href='#' style='background-image:url("+sliderSrc+")'&gt;"+sliderName+"&lt;/a&gt;";
+    });
+
+    sliderDot.html(dotIndex);
+    sliderDot.find("a").eq(0).addClass("active");
+
+    //닷 버튼 클릭하기
+    sliderDot.on("click","a",function(e){
+        e.preventDefault();
+        gotoSlider($(this).index());
+    });
+    
+    //버큰 클릭하기
+    sliderBtn.on("click","a",function(e){
+        e.preventDefault();
+        let nextIndex = (currentIndex + 1) % sliderCount;
+        let prevIndex = (currentIndex - 1) % sliderCount;
+        if(currentIndex == 0) prevIndex = sliderCount - 1;
+        //console.log("nextIndex :" + nextIndex)
+        console.log("prevIndex :" + prevIndex)
+        if( $(this).hasClass("prev") ){
+            gotoSlider(prevIndex);
+        } else {
+            gotoSlider(nextIndex);
+        }
+    });</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro8 -->              
         <!-- //col-md-12 -->       
     <!-- //row -->
             </div>

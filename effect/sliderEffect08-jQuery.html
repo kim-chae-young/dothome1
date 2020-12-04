@@ -180,12 +180,14 @@
     </main>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         const sliderWrap = $(".slider-wrap");
-        const sliderimg = $(".slider-img");
+        const sliderImg = $(".slider-img");
         const slider = $(".slider");
         const sliderBtn = $(".slider-btn");
-        const sliderDot = $(".slider-dot")
+        const sliderDot = $(".slider-dot");
 
         let sliderCount = slider.length;
         let sliderWidth = slider.outerWidth();
@@ -194,37 +196,45 @@
         let currentIndex = 0;
         let dotIndex = "";
 
-        // 이미지개수만큼 닷버튼 만들기
+        sliderImg.css({ width: sliderTotalWidth, height: sliderHeight });
+
+        //이미지 움직이기
+        function gotoSlider(index){
+            sliderImg.animate({ left: -sliderWidth * index }, 400);
+            currentIndex = index;
+            sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+        }
+
+        //이미지 갯수만큼 닷 버튼 만들기
         slider.each(function(index){
-            // dotIndex += "<a href='#'></a>";
-            // dotIndex += "<a href='#'>"+(index+1)+"</a>";
-            // let name = $(this).find("img").attr("alt");
+            //dotIndex += "<a href='#'></a>";
+            //dotIndex += "<a href='#'>"+ (index+1) +"</a>";
+            //let name = $(this).find("img").attr("alt");
+            //dotIndex += "<a href='#'>"+ name +"</a>";
             let sliderName = $(this).find("img").attr("alt");
             let sliderSrc = $(this).find("img").attr("src");
             dotIndex += "<a href='#' style='background-image:url("+sliderSrc+")'>"+sliderName+"</a>";
-        })
+        });
+
         sliderDot.html(dotIndex);
         sliderDot.find("a").eq(0).addClass("active");
 
-        // 닷버튼 클릭
-        sliderDot.on("click","a", function(e){
+        //닷 버튼 클릭하기
+        sliderDot.on("click","a",function(e){
             e.preventDefault();
-            gotoSlider();
-            
+            gotoSlider($(this).index());
         });
-
-        // 버튼클릭
+        
+        //버큰 클릭하기
         sliderBtn.on("click","a",function(e){
             e.preventDefault();
-            let nextIndex = (currentIndex +1) % sliderCount;
-            let prevIndex = (currentIndex -1) % sliderCount;
-            if(currentIndex ==0) prevIndex = sliderCount -1;
-
-            // console.log("nextIndex:" + nextIndex)
-            console.log("prevIndex:" + prevIndex)
-
-            if($(this).hasClass("prev")){
-                gotoSlider(-1);
+            let nextIndex = (currentIndex + 1) % sliderCount;
+            let prevIndex = (currentIndex - 1) % sliderCount;
+            if(currentIndex == 0) prevIndex = sliderCount - 1;
+            //console.log("nextIndex :" + nextIndex)
+            console.log("prevIndex :" + prevIndex)
+            if( $(this).hasClass("prev") ){
+                gotoSlider(prevIndex);
             } else {
                 gotoSlider(nextIndex);
             }
