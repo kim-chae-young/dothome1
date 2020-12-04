@@ -105,7 +105,15 @@
         .slider-btn a.prev {left:0;}
         .slider-btn a.next {right:0;}
         .slider-dot {position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);}
-        .slider-dot a {width: 20px; height: 20px; display: inline-block; background: rgba(0,0,0,0.3); text-indent: -9999px; border-radius: 50%; margin: 5px; transition: background 0.3s;}
+        .slider-dot a {
+            width: 20px; height: 20px; 
+            display: inline-block; 
+            background: rgba(0,0,0,0.3); 
+            text-indent: -9999px; 
+            border-radius: 50%; 
+            margin: 5px; 
+            transition: background 0.3s;
+        }
         .slider-dot a.active {background: rgba(255,255,255,0.9);}
     </style>
 </head>
@@ -164,22 +172,23 @@
         let sliderWidth = slider.outerWidth();
         let sliderHeight = slider.outerHeight();
         let sliderTotalWidth = sliderWidth * sliderCount;
-        let sliderShowNumber = 1;
         let currentIndex = 0;
         let dotIndex = "";
 
-        // let sliderCopy = $(".slider:lt("+sliderShowNumber+")").clone();
-        // sliderimg.append(sliderCopy);
-
         sliderimg.css({width: sliderTotalWidth, height:sliderHeight});
 
+        // 이미지움직이기
         function gotoSlider(index){
             sliderimg.animate({left: -sliderWidth * index},400);
             currentIndex = index;
             sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
         }
-        slider.each(function(){
+
+        // 이미지개수만큼 닷버튼 만들기
+        slider.each(function(index){
             dotIndex += "<a href='#'></a>";
+            // dotIndex += "<a href='#'>"+(index+1)+"</a>";
+            // let name = $(this).find("img").attr("alt");
         })
         sliderDot.html(dotIndex);
         sliderDot.find("a").eq(0).addClass("active");
