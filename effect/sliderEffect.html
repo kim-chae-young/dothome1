@@ -89,7 +89,7 @@
                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header">sliderEffect01</h2>
                     <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
-                    <iframe src="sliderEffect01-jquery.html" width="100%" height="700px" frameborder="0"></iframe>
+                    <iframe src="sliderEffect01-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
                         <div class="javascriptSource">
                             <h3 class="btn btn-primary btn-sm">jquery</h3>
 <pre class="line--numbers language-js"><code> const sliderWrap = $(".slider-wrap");
@@ -145,7 +145,7 @@ setInterval(() => {
                 <div class="bs-docs-section">
                     <h2 id="intro2" class="page-header">sliderEffect02</h2>
                     <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
-                    <iframe src="slideEffect02-jquery.html" width="100%" height="700px" frameborder="0"></iframe>
+                    <iframe src="slideEffect02-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
                         <div class="javascriptSource">
                             <h3 class="btn btn-primary btn-sm">jquery</h3>
 <pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
@@ -199,7 +199,117 @@ setInterval(function(){
 },3000)</code></pre>
                         </div>
                 </div>
-                <!-- //Intro2 -->                        
+                <!-- //Intro2 -->       
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">sliderEffect03</h2>
+                    <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect03-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
+
+setInterval(function(){
+    sliderimg.animate({left:"-800px"},400, function(){
+        $(".slider:first-child").appendTo(sliderimg);
+        sliderimg.css("left", "");
+    });
+},3000);</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro3 -->   
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">sliderEffect04</h2>
+                    <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect04-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
+
+let currentIndex = 0;
+let sliderCount = slider.length -1;
+let sliderHeight = slider.height();
+let sliderSpeed = 400;
+
+// 한바퀴
+/*setInterval(function(){
+    currentIndex &lt; 4 ? currentIndex++ : currentIndex = 0;
+
+    let sliderPosition = currentIndex * -sliderHeight;
+    sliderimg.animate({top:sliderPosition}, 400);
+},3000);*/
+
+// 연속적으로
+setInterval(function(){
+    sliderimg.animate({top:-sliderHeight}, sliderSpeed, function(){
+        $(".slider:eq(0)").appendTo(sliderimg);
+        sliderimg.css("top", "");
+    });           
+},3000);</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro4 -->
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">sliderEffect05</h2>
+                    <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect05-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderimg = $(".slider-img");
+const slider = $(".slider");
+const sliderBtn = $(".slider-btn");
+
+let currentIndex = 0;
+let sliderCount = slider.length;
+let sliderwidth = slider.width();
+let sliderheight = slider.height();
+let sliderSpeed = 400;
+let sliderTotalWidth = sliderwidth * sliderCount;
+
+sliderimg.css({width: sliderTotalWidth, height: sliderheight, marginLeft:-sliderwidth});
+$(".slider:last-child").prependTo(sliderimg);
+
+function moveLeft(){
+    sliderimg.animate({left: + sliderwidth},400, function(){
+        $(".slider:last-child").prependTo(sliderimg);
+        sliderimg.css("left", "");
+    });
+}
+function moveRight(){
+    sliderimg.animate({left: - sliderwidth},400, function(){
+        $(".slider:first-child").appendTo(sliderimg);
+        sliderimg.css("left", "");
+    });
+}
+
+sliderBtn.find(".prev").click(function(){
+    moveLeft();
+});
+sliderBtn.find(".next").click(function(){
+    moveRight();
+});</code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro5 -->              
         <!-- //col-md-12 -->       
     <!-- //row -->
             </div>
