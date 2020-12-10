@@ -71,7 +71,7 @@
         }
 
         // iframe 보이기
-        function showPlayer() {
+        function showPlayer(){
             // 처음 클릭시 iframe을 생성 
             if ( !player.obj ) {
                 setPlayer( $selector.showButton.data("youtube") );
@@ -80,7 +80,7 @@
             $selector.body.addClass("modal_on");
             $selector.overlay.show();
             player.visible = true;
-        }
+        };
 
         // iframe 감추기
         function hidePlayer() {
