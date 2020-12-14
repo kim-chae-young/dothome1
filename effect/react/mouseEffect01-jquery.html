@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseEffect01-jquery</title>
+    <style>
+        @font-face {
+    font-family: '62570체';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/62570체.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        *, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0; color: #fff;}
+        a {text-decoration: none; color: #fff; transition: all 0.2s;}
+        a:hover {border-bottom: 1px dashed #fff;}
+        img {width: 100%; vertical-align: top;}
+        li {list-style: none;}
+        body {
+            background-color: #a55dff;
+            background-blend-mode: luminosity;
+            background: url(img/image10@2.jpg) no-repeat center center;
+            background-size:cover;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: none;
+        }
+
+        /* info */
+        .info {position: fixed; z-index: 1000;}
+        .info.left {left: 20px; top: 20px;}
+        .info.right {right: 20px; top: 20px;}
+        .info.bottom {right: 20px; bottom: 20px;}
+        .info h1 {font-size: 2rem; line-height: 1.4;}
+        .info p {font-size: 1rem;}
+        .info li {font-size: 1rem; line-height: 1.4;}
+        .info li a {color: #fff; width: 25px; height: 25px; border: 1px dashed #fff; display: inline-block; border-radius: 50%; text-align: center;
+            line-height: 25px; font-size: 0.8rem; margin: 5px;}
+        .info li a.active {background: #fff; color: #000;}
+
+        @media (max-width: 800px) {
+            .info h1 {display: none;}
+        }
+
+        /* main */
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+        }
+        .contents p {
+            font-size: 3vw;
+            color: #fff;
+            font-family: '62570체';
+        }
+        .contents p:first-child {
+            font-size: 2.3vw;
+            line-height: 2;
+        }
+        .contents p em {color: aqua; border-bottom: 2px dashed blue; font-style: normal;}
+        .cursor {
+            position: absolute; 
+            left: 0; top: 0; 
+            width: 50px; height: 50px; 
+            border-radius: 50%; 
+            border: 3px solid #fff; 
+            z-index: 1000; 
+            background: rgba(255,255,255,0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.2s, border-radius 0.2s
+        }
+        .cursor.active {
+            background-color: rgba(165,42,42,0.4); 
+            border-color: brown; 
+            transform:  scale(2) rotate(720deg); 
+            border-radius: 0;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(window).mousemove(function(){
+            $(".clientX").text(event.clientX);
+            $(".clientY").text(event.clientY);
+            $(".offsetX").text(event.offsetX);
+            $(".offsetY").text(event.offsetY);
+            $(".pageX").text(event.pageX);
+            $(".pageY").text(event.pageY);
+            $(".screenX").text(event.screenX);
+            $(".screenY").text(event.screenY);      
+        });
+        // 마우스 움직이기
+        $(window).mouseover(function(e){
+            $(".cursor").css({left:e.clientX-25,top:e.clientY-25});
+        });
+        // em 태그에 마우스 오버했을 때 active추가
+        $(".contents p em").hover(function(){
+            $(".cursor").addClass("active");
+        },function(){
+            $(".cursor").removeClass("active");
+        });       
+    </script>
+</body>
+</html>
