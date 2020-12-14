@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'paybooc-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            height: 100vh;
+            font-family: 'paybooc-Bold';
+        }
+
+        .hover-wrap {display:flex; align-items:center; height: 100vh; justify-content:center;}
+        .hover-wrap > figure {
+            max-width: 400px;
+            margin:1%;
+            border:7px solid #ff51ff;
+            box-shadow:1px 1px 1px rgba(0,0,0,0.5);
+            position:relative; overflow:hidden;
+        }
+        .hover-wrap > figure img {
+            width:100%; vertical-align: top;    
+        }
+
+        /* hover effect */
+        .hover-wrap .hover3 {
+            background:#fff; position:relative;
+        }
+        .hover-wrap .hover3 img {
+            opacity:1; 
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-wrap .hover3:hover img {opacity:0.5;}
+        .hover-wrap .hover3::before {
+            content:'';
+            width: 60px; height: 1px;
+            background: #fff;
+            position: absolute; left: -50%; top: 50%;
+            transform:translate(-50%, -50%);
+            transition: all 0.33s ease-in-out;
+            z-index:10;
+        }
+        .hover-wrap .hover3::after {
+            content:'';
+            width: 1px; height: 60px;
+            background: #fff;
+            position:absolute; left: 50%; top: -50%;
+            transform:translate(-50%, -50%);
+            transition: all 0.33s ease-in-out;
+        }
+        .hover-wrap .hover3:hover::before {
+            left: 50%; top: 50%;
+        }
+        .hover-wrap .hover3:hover::after {
+            left: 50%; top: 50%;
+        } 
+        /* hover4 */
+        .hover-wrap .hover4 {
+            background:#fff; position:relative;
+        }
+        .hover-wrap .hover4 img {
+            opacity:1; 
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-wrap .hover4:hover img {opacity:0.5;}
+        .hover-wrap .hover4::before {
+            content:'';
+            width: 60px; height: 1px;
+            background: #fff;
+            position:absolute; right: 0%; bottom: 50%;
+            transform:translate(100%, -50%);
+            transition: all 0.33s ease-in-out;
+            z-index:10;
+        }
+        .hover-wrap .hover4::after {
+            content:'';
+            width: 1px; height: 60px;
+            background: #fff;
+            position:absolute; right: 50%; bottom: 0%;
+            transform:translate(-50%, 100%);
+            transition: all 0.33s ease-in-out;
+        }
+        .hover-wrap .hover4:hover::before {
+            right: 60%; bottom: 50%;
+        }
+        .hover-wrap .hover4:hover::after {
+            right: 50%; bottom: 60%;
+        }  
+    </style>
+<body>
+    <div class="hover-wrap">
+        <figure class="hover3">
+            <img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/hover10.jpg" alt="이미지">
+            <a href="#" aria-hidden="true"></a>        
+        </figure>  
+        
+        <figure class="hover4">
+            <img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/hover09.jpg" alt="이미지">
+            <a href="#" aria-hidden="true"></a>
+        </figure>
+    </div>
+</body>
+</html>

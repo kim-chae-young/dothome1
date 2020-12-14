@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'paybooc-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            height: 100vh;
+            font-family: 'paybooc-Bold';
+        }
+        .hover-wrap {display:flex; align-items:center; height: 100vh; justify-content:center;}
+        .hover-wrap > figure {
+            max-width: 400px;
+            margin:1%;
+            border:7px solid #ff51ff;
+            box-shadow:1px 1px 1px rgba(0,0,0,0.5);
+            position:relative; overflow:hidden;
+        }
+        .hover-wrap > figure img {
+            width:100%; vertical-align: top;
+        }
+        .hover-wrap > figure > figcation {
+            position:absolute; bottom: 0;
+            left: 0; color:#fff;
+            background: rgba(0,0,0,0.8);
+            width: 100%; padding: 20px;
+            box-sizing:border-box;
+        
+        }
+        .hover-wrap > figure > figcation h3 {
+            font-size: 24px;
+            padding-bottom:10px;
+        }
+        .hover-wrap > figure > figcation p {
+            font-size: 18px;
+        }
+        /* hover effect */
+        .hover-wrap .hover1 figcation {
+            opacity:0;
+            transition: all 0.33s ease-in-out;
+        }
+        .hover-wrap .hover1:hover figcation {
+            opacity:1;
+        }
+        .hover-wrap .hover2 figcation {opacity:0; transition:all 0.33s ease-in-out; bottom:60px;}
+        .hover2:hover figcation {opacity:1; bottom:0px;}
+
+        @media (max-width:800px){
+            .hover-wrap {flex-direction:column;}
+        }
+    </style>
+</head>
+<body>
+    <div class="hover-wrap">
+        <figure class="hover1">
+            <img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/hover15.jpg" alt="이미지">
+            <figcation>
+                <h3>mouse Hover effect01</h3>
+                <p>마우스 오버 효과이다.</p>
+            </figcation>
+        </figure>  
+        
+        <figure class="hover2">
+            <img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/hover14.jpg" alt="이미지">
+            <figcation>
+                <h3>mouse Hover effect02</h3>
+                <p>마우스 오버 효과이다.</p>
+            </figcation>
+        </figure>
+    </div>
+</body>
+</html>
