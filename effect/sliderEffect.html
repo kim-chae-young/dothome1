@@ -90,9 +90,13 @@
                     <h2 id="intro2" class="page-header">sliderEffect01</h2>
                     <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
                     <iframe src="sliderEffect01-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code> const sliderWrap = $(".slider-wrap");
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home"><pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
 const sliderimg = $(".slider-img");
 const slider = $(".slider");
 
@@ -110,11 +114,8 @@ setInterval(function(){
     console.log("currentIndex : " + nextIndex);
 
     currentIndex = nextIndex;
-},3000);)</code></pre>
-                        </div>  
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">javascript</h3>
-<pre class="line--numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
+},3000);)</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile"><pre class="line--numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
 const sliderimg = document.querySelector(".slider-img");
 const slider = document.querySelectorAll(".slider");
 
@@ -137,8 +138,9 @@ setInterval(() => {
     slider[nextIndex].style.opacity = "1";
 
     currentIndex = nextIndex           
-},3000);</code></pre> 
+},3000);</code></pre></div>
                         </div>
+                    </div>                
                 </div>              
                 <!-- //Intro1 -->
                 <!-- Intro2 -->
@@ -146,6 +148,60 @@ setInterval(() => {
                     <h2 id="intro2" class="page-header">sliderEffect02</h2>
                     <p class="bs-callout bs-callout-info">slider를 나타낸 효과입니다.</p>
                     <iframe src="sliderEffect02-jQuery.html" width="100%" height="700px" frameborder="0"></iframe>
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home"><pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+                                const sliderimg = $(".slider-img");
+                                const slider = $(".slider");
+                                
+                                let currentIndex = 0;
+                                let sliderCount = slider.length;
+                                
+                                setInterval(function(){
+                                    // if(currentIndex &lt sliderCount-1){
+                                    //     currentIndex++;
+                                    // } else {
+                                    //     currentIndex = 0;
+                                    // }
+                                    currentIndex &lt sliderCount -1 ? currentIndex++ : currentIndex =0;
+                                
+                                    let sliderPosition = currentIndex * (-800) + "px";
+                                            // 0 * -800px - >0
+                                            // 1*-800px -> -800px
+                                            // 2* -800px ->-1600px
+                                            // 3 * -800px -> -2400px
+                                    sliderimg.animate({left:sliderPosition},400);              
+                                },3000);</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile"><pre class="line--numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
+                                const sliderimg = document.querySelector(".slider-img");
+                                const slider = document.querySelectorAll(".slider");
+                                
+                                let currenIndex = 0;
+                                let sliderCount = slider.length;
+                                let sliderWidth = sliderWrap.scrollWidth/-5;
+                                
+                                setInterval(function(){
+                                //    if( currenIndex &lt sliderCount -1){
+                                //         currenIndex++;
+                                //     } else {
+                                //         currenIndex = 0;
+                                //     }        
+                                    
+                                    currenIndex &lt sliderCount -1 ? currenIndex++ : currenIndex =0;
+                                
+                                    let sliderPosition = currenIndex * sliderWidth +"px";
+                                    // sliderimg.animate({left:sliderPosition},400); 
+                                    sliderimg.style.left = sliderPosition;
+                                    sliderimg.style.transition = "all 0.6s";
+                                
+                                    gsap.to(sliderimg, {duration: 0.6, left:sliderPosition, ease: "exop.out"}); 
+                                },3000)</code></pre></div>
+                        </div>
+                    </div> 
                         <div class="javascriptSource">
                             <h3 class="btn btn-primary btn-sm">jquery</h3>
 <pre class="line--numbers language-js"><code>const sliderWrap = $(".slider-wrap");
@@ -500,7 +556,22 @@ sliderBtn.on("click","a",function(e){
 <pre class="line--numbers language-js"><code></code></pre>
                         </div>
                 </div>
-                <!-- //Intro8 -->              
+                <!-- //Intro8 -->     
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">sample01</h2>
+                    <p class="bs-callout bs-callout-info">버튼과 닷을 이용한 slider를 나타낸 효과입니다.</p>
+                    <iframe src="sliderEffect-3d.html" width="100%" height="700px" frameborder="0"></iframe>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">jquery</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                        <div class="javascriptSource">
+                            <h3 class="btn btn-primary btn-sm">javascript</h3>
+<pre class="line--numbers language-js"><code></code></pre>
+                        </div>
+                </div>
+                <!-- //Intro9 -->              
         <!-- //col-md-12 -->       
     <!-- //row -->
             </div>
