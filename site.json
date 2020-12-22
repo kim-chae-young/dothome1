@@ -17,7 +17,7 @@
         {
           "id": 2,
           "link": "https://webstoryboy.github.io/portfolio/port1/",
-          "image": "img/port2-1.jpg",
+          "image": "img/site2-1.jpg",
           "title": "PORTFOLIO REPONSIVE",
           "category": "PORTFOLIO2",
           "rating": 4.9
@@ -25,7 +25,7 @@
         {
           "id": 3,
           "link": "https://webstoryboy.github.io/portfolio/port3/pf03.html",
-          "image": "../img/port3-1.jpg",
+          "image": "img/site3-1.jpg",
           "title": "PORTFOLIO MEGABOX",
           "category": "PORTFOLIO3",
           "rating": 5
@@ -33,7 +33,7 @@
         {
           "id": 4,
           "link": "https://webstoryboy.github.io/portfolio/port4/index4.html",
-          "image": "../img/port4-1.jpg",
+          "image": "img/site4-1.jpg",
           "title": "PORTFOLIO NAVERCLOVA",
           "category": "PORTFOLIO4",
           "rating": 5
@@ -41,7 +41,7 @@
         {
           "id": 5,
           "link": "https://webstoryboy.github.io/portfolio/port5/indexs/main.html",
-          "image": "../img/port6-1.jpg",
+          "image": "img/site6-1.jpg",
           "title": "PORTFOLIO CLOVA SUB",
           "category": "PORTFOLIO5",
           "rating": 4.9
@@ -49,7 +49,7 @@
         {
           "id": 6,
           "link": "https://webstoryboy.github.io/portfolio/port6/port05.html",
-          "image": "../img/port5-1.jpg",
+          "image": "img/site5-1.jpg",
           "title": "PORTFOLIO REACT",
           "category": "PORTFOLIO6",
           "rating": 4.9
