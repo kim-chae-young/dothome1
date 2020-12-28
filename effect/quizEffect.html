@@ -90,9 +90,13 @@
                     <h2 id="intro2" class="page-header">Quiz1</h2>
                     <p class="bs-callout bs-callout-info">주관식 1문제 스타일(자바스크립트/제이쿼리)</p>   
                     <iframe width="100%" height="560px" src="quizEffect01-jquery.html" frameborder="0"></iframe>
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code>// 선택자
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home"><pre class="line--numbers language-js"><code>// 선택자
 const questionAsk = $(".question");
 const questionNum = $(".num");
 const questionBtn = $(".confirm-btn");
@@ -121,12 +125,8 @@ questionBtn.click(function(){
     questionBtn.hide();
     questionAnswer.show();
     questionEx.show();
-})</code></pre>
-                        </div>
-                        <div class="jquerySource">
-                            <h3 class="btn btn-primary btn-sm">JavaScript</h3>
-<pre class="line--numbers language-js"><code>
-// 선택자
+})</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile"><pre class="line--numbers language-js"><code>// 선택자
 const questionAsk = document.querySelector(".question");
 const questionNum = document.querySelector(".num");
 const questionBtn = document.querySelector(".confirm-btn");
@@ -150,8 +150,9 @@ questionBtn.addEventListener("click", function() {
 questionBtn.style.display="none";
 questionAnswer.style.display="block";
 questionEx.style.display="block";
-})</code></pre>
-                        </div> 
+})</code></pre></div>
+                        </div>
+                    </div>
                 </div>                                  
                 <!-- //Intro1 -->
 
@@ -160,9 +161,13 @@ questionEx.style.display="block";
                     <h2 id="intro2" class="page-header">Quiz2</h2>
                     <p class="bs-callout bs-callout-info">주관식3문제 이상스타일 자바스크립트</p>
                     <iframe src="quizEffect02-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code>//선택자
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home2" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile2" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home2"><pre class="line--numbers language-js"><code>//선택자
 const questionAsk = $(".question");
 const questionNum = $(".num");
 const questionBtn = $(".confirm-btn");
@@ -230,11 +235,8 @@ questionEx.hide();
 questionBtn.click(function(){
     $(this).hide();
     $(this).nextAll().show();
-}); </code></pre>
-                    </div>
-                    <div class="javascriptSource">
-                        <h3 class="btn btn-primary btn-sm">JavaScript</h3>
-<pre class="line--numbers language-js"><code>// 선택자
+}); </code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile2"><pre class="line--numbers language-js"><code>// 선택자
 const questionQuiz = document.querySelectorAll(".quiz");
 const questionAsk = document.querySelectorAll(".question");
 const questionNum = document.querySelectorAll(".num");
@@ -308,7 +310,8 @@ questionBtn.forEach(elem => {
         this.style.display="none";
         this.nextElementSibling.style.display = "block";
     })
-}) </code></pre>
+}) </code></pre></div>
+                        </div>
                     </div>
                 </div>
                 <!-- //Intro2 -->
@@ -317,9 +320,13 @@ questionBtn.forEach(elem => {
                     <h2 id="intro2" class="page-header">QuizEffect03</h2>
                     <p class="bs-callout bs-callout-info">객관식 한문제 제이쿼리</p>
                     <iframe src="quizEffect03-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code>//선택자
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home3" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile3" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home3"><pre class="line--numbers language-js"><code>//선택자
 const questionAsk = $(".question");
 const questionNum = $(".num");
 const questionBtn = $(".confirm-btn");
@@ -377,11 +384,8 @@ function answerQuiz(){
     });
 }
 //questionBtn.click(function(){});
-questionBtn.on("click", answerQuiz); </code></pre>
-                    </div>
-                    <div class="javascriptSource">
-                        <h3 class="btn btn-primary btn-sm">JavaScript</h3>
-<pre class="line--numbers language-js"><code>//선택자
+questionBtn.on("click", answerQuiz); </code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile3"><pre class="line--numbers language-js"><code>//선택자
 const questionAsk = document.querySelector(".question");
 const questionNum = document.querySelector(".num");
 const questionBtn = document.querySelector(".confirm-btn");
@@ -437,7 +441,8 @@ function answerQuiz(){
         }
     }
 }
-questionBtn.addEventListener("click",answerQuiz);</code></pre>
+questionBtn.addEventListener("click",answerQuiz);</code></pre></div>
+                        </div>
                     </div>
                 </div>
                 <!-- //Intro3 -->
@@ -446,108 +451,110 @@ questionBtn.addEventListener("click",answerQuiz);</code></pre>
                     <h2 id="intro2" class="page-header">QuizEffect04</h2>
                     <p class="bs-callout bs-callout-info">객관식 한문제 제이쿼리</p>
                     <iframe src="quizEffect04-javascript.html" width="100%" height="800px" frameborder="0"></iframe>
-                        <div class="javascriptSource">
-                            <h3 class="btn btn-primary btn-sm">jquery</h3>
-<pre class="line--numbers language-js"><code></code></pre>
-                    </div>
-                    <div class="javascriptSource">
-                        <h3 class="btn btn-primary btn-sm">JavaScript</h3>
-<pre class="line--numbers language-js"><code>//선택자
-    const questionQuiz = document.querySelector(".quiz")
-    const questionBtn = document.querySelector(".confirm-btn");        
-    const questionResult = document.querySelector(".confirm-result");        
-    
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home4" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile4" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home4"><pre class="line--numbers language-js"><code></code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile4"><pre class="line--numbers language-js"><code>//선택자
+const questionQuiz = document.querySelector(".quiz")
+const questionBtn = document.querySelector(".confirm-btn");        
+const questionResult = document.querySelector(".confirm-result");        
 
-    // 문제정보
-    const quizInfo = [
-        {
-            quizNum : 1,
-            quizAsk : "다음 중 시멘틱 태그는 무엇인가요?",
-            quizChoice : {
-                1: "&lt;a&gt; 태그",
-                2: "&lt;br&gt; 태그",
-                3: "&lt;em&gt; 태그",
-                4: "&lt;main&gt; 태그",
-            },
-            quizAnswer : 4,
-            quizEx : "&lt;main&gt; 태그는 시멘틱 태그입니다."             
-            },{
-            quizNum : 2,
-            quizAsk : "다음 중 CSS의 단위로 맞지 않는 것은 무엇인가요?",
-            quizChoice : {
-                1: "em",
-                2: "rem",
-                3: "vm",
-                4: "ch",
-            },
-            quizAnswer : 4,
-            quizEx : "vm 단위는 없습니다."
+
+// 문제정보
+const quizInfo = [
+    {
+        quizNum : 1,
+        quizAsk : "다음 중 시멘틱 태그는 무엇인가요?",
+        quizChoice : {
+            1: "&lt;a&gt; 태그",
+            2: "&lt;br&gt; 태그",
+            3: "&lt;em&gt; 태그",
+            4: "&lt;main&gt; 태그",
+        },
+        quizAnswer : 4,
+        quizEx : "&lt;main&gt; 태그는 시멘틱 태그입니다."             
         },{
-            quizNum : 3,
-            quizAsk : "다음 중 자바스크립트 언어와 관련이 없는 것은 무엇인가요?",
-            quizChoice : {
-                1: "react.js",
-                2: "jquery.js",
-                3: "vue.js",
-                4: "c++",
-            },
-            quizAnswer : 4,
-            quizEx : "c++는 자바스크립트 언어와 관련이 없습니다."
+        quizNum : 2,
+        quizAsk : "다음 중 CSS의 단위로 맞지 않는 것은 무엇인가요?",
+        quizChoice : {
+            1: "em",
+            2: "rem",
+            3: "vm",
+            4: "ch",
+        },
+        quizAnswer : 4,
+        quizEx : "vm 단위는 없습니다."
+    },{
+        quizNum : 3,
+        quizAsk : "다음 중 자바스크립트 언어와 관련이 없는 것은 무엇인가요?",
+        quizChoice : {
+            1: "react.js",
+            2: "jquery.js",
+            3: "vue.js",
+            4: "c++",
+        },
+        quizAnswer : 4,
+        quizEx : "c++는 자바스크립트 언어와 관련이 없습니다."
+    }
+];
+
+// 문제만들기
+function updataQuiz(){
+    const output = [];
+
+    quizInfo.forEach((currentQuestion, questionNumber)=&gt; {
+        output.push(`
+            &lt;h2&gt;&lt; 문제&lt;span class="num"&gt;${currentQuestion.quizNum}&lt;/span&gt; &gt;&lt;/h2&gt;
+            &lt;p class="question"&gt;${currentQuestion.quizAsk}&lt;/p&gt;
+            &lt;div class="selects"&gt;
+                &lt;label&gt;
+                    &lt;input class="select" type="radio" name="select${questionNumber}" value="1"&gt;
+                    &lt;span class="choice"&gt;${currentQuestion.quizChoice[1]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input class="select" type="radio" name="select${questionNumber}" value="2"&gt;
+                    &lt;span class="choice"&gt;${currentQuestion.quizChoice[2]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input class="select" type="radio" name="select${questionNumber}" value="3"&gt;
+                    &lt;span class="choice"&gt;${currentQuestion.quizChoice[3]}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                    &lt;input class="select" type="radio" name="select${questionNumber}" value="4"&gt;
+                    &lt;span class="choice"&gt;${currentQuestion.quizChoice[4]}&lt;/span&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;
+        `)
+        questionQuiz.innerHTML = output.join(' ');
+    });               
+}
+updataQuiz();
+
+// 결과 확인하기
+function showResults(){
+    const selectContainers = questionQuiz.querySelectorAll(".selects");
+    let numCorrect = 0;
+    // 사용자가 정답을 체크 ==문제의 정답
+    quizInfo.forEach((currentQuestion, questionNumber ) =&gt; { 
+        const selectContainer = selectContainers[questionNumber];
+        const resultSelector = `input[name=select${questionNumber}]:checked`;
+        const resultAnswer = (selectContainer.querySelector(resultSelector) || {}).value;
+
+        if(resultAnswer == currentQuestion.quizAnswer){
+            numCorrect++;
+            selectContainers[questionNumber].style.color="blue";
+        } else {
+            selectContainers[questionNumber].style.color="red";
         }
-    ];
-
-    // 문제만들기
-    function updataQuiz(){
-        const output = [];
-
-        quizInfo.forEach((currentQuestion, questionNumber)=&gt; {
-            output.push(`
-                &lt;h2&gt;&lt; 문제&lt;span class="num"&gt;${currentQuestion.quizNum}&lt;/span&gt; &gt;&lt;/h2&gt;
-                &lt;p class="question"&gt;${currentQuestion.quizAsk}&lt;/p&gt;
-                &lt;div class="selects"&gt;
-                    &lt;label&gt;
-                        &lt;input class="select" type="radio" name="select${questionNumber}" value="1"&gt;
-                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[1]}&lt;/span&gt;
-                    &lt;/label&gt;
-                    &lt;label&gt;
-                        &lt;input class="select" type="radio" name="select${questionNumber}" value="2"&gt;
-                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[2]}&lt;/span&gt;
-                    &lt;/label&gt;
-                    &lt;label&gt;
-                        &lt;input class="select" type="radio" name="select${questionNumber}" value="3"&gt;
-                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[3]}&lt;/span&gt;
-                    &lt;/label&gt;
-                    &lt;label&gt;
-                        &lt;input class="select" type="radio" name="select${questionNumber}" value="4"&gt;
-                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[4]}&lt;/span&gt;
-                    &lt;/label&gt;
-                &lt;/div&gt;
-            `)
-            questionQuiz.innerHTML = output.join(' ');
-        });               
-    }
-    updataQuiz();
-
-    // 결과 확인하기
-    function showResults(){
-        const selectContainers = questionQuiz.querySelectorAll(".selects");
-        let numCorrect = 0;
-        // 사용자가 정답을 체크 ==문제의 정답
-        quizInfo.forEach((currentQuestion, questionNumber ) =&gt; { 
-            const selectContainer = selectContainers[questionNumber];
-            const resultSelector = `input[name=select${questionNumber}]:checked`;
-            const resultAnswer = (selectContainer.querySelector(resultSelector) || {}).value;
-
-            if(resultAnswer == currentQuestion.quizAnswer){
-                numCorrect++;
-                selectContainers[questionNumber].style.color="blue";
-            } else {
-                selectContainers[questionNumber].style.color="red";
-            }
-        });
-        questionResult.innerHTML = `${quizInfo.length} 문제중에 총 ${numCorrect} 문제를 맞추었습니다.`;
-    }
-    questionBtn.addEventListener("click", showResults);</code></pre>
+    });
+    questionResult.innerHTML = `${quizInfo.length} 문제중에 총 ${numCorrect} 문제를 맞추었습니다.`;
+}
+questionBtn.addEventListener("click", showResults);</code></pre></div>
+                        </div>
                     </div>
                 </div>
                 <!-- //Intro4 -->

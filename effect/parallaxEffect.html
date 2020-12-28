@@ -629,15 +629,29 @@ $(document).keydown(function(e){
                         </ul>
                         <div class="tab-content">
                             <div role="tabpane" class="tab-pane active" id="home6"><pre class="line-numbers language-js"><code></code></pre></div>
-                            <div role="tabpane" class="tab-pane" id="profile6"><pre class="line-numbers language-js"><code>fff</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile6"><pre class="line-numbers language-js"><code>$(window).scroll(function(){
+    let scrollTop = $(window).scrollTop();
+    if( scrollTop > $("#section2").offset().top ){
+        $("#section2").css("background","red");
+    }
+    //3번째 섹션에 왔을 때 스크롤탑을 0으로 초기화
+    let offset = scrollTop -  $("#section3").offset().top;
+    if( scrollTop > $("#section3").offset().top ){
+        //$("#section3 .sec3-wrap > div:nth-child(1)").css("background","red");
+        $("#section3 .sec3").css("left", -offset );
+    }
+    if( scrollTop > $("#section4").offset().top ){
+        $("#section4").css("background","blue");
+    }
+});</code></pre></div>
                         </div>
                     </div>
                 </div>
                 <!-- //Intro6 -->
                 <!-- Intro7 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro5" class="page-header">parallax-verticla2</h2>
-                    <p class="bs-callout bs-callout-info">scrollTop을 이용해 가로모드를 작업하였습니다.</p>
+                    <h2 id="intro7" class="page-header">parallax-scroll</h2>
+                    <p class="bs-callout bs-callout-info">scroll효과를 나타냈습니다.</p>
                     <iframe src="parallax05-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
                     <div>
                         <ul class="nav nav-tabs" role="tablist">
@@ -645,11 +659,11 @@ $(document).keydown(function(e){
                             <li role="presentation"><a href="#profile7" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div role="tabpane" class="tab-pane active" id="home7"><pre class="line-numbers language-js"><code>$("a[href^='#']").click(function(e){
-e.preventDefault();
-let target = $( $(this).attr("href") );
+                            <div role="tabpane" class="tab-pane active" id="home7"><pre class="line-numbers language-js"><code> $("a[href^='#']").click(function(e){
+    e.preventDefault();
+    let target = $( $(this).attr("href") );
 
-$("html,body").animate({scrollTop : target.offset().top},8200, "easeInOutElastic");
+    $("html,body").animate({scrollTop : target.offset().top},8200, "easeInOutElastic");
 })</code></pre></div>
                             <div role="tabpane" class="tab-pane" id="profile7"><pre class="line-numbers language-js"><code>document.querySelectorAll("a[href^='#']").forEach(elem => {
 elem.addEventListener("click", e => {
@@ -665,8 +679,8 @@ elem.addEventListener("click", e => {
                 <!-- //Intro7 -->
                 <!-- Intro8 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro8" class="page-header">parallax-verticla2</h2>
-                    <p class="bs-callout bs-callout-info">scrollTop을 이용해 가로모드를 작업하였습니다.</p>
+                    <h2 id="intro8" class="page-header">parallax-reveal</h2>
+                    <p class="bs-callout bs-callout-info">reveal효과를 나타냈습니다.</p>
                     <iframe src="parallax06-jquery.html" width="100%" height="800px" frameborder="0"></iframe>
                     <div>
                         <ul class="nav nav-tabs" role="tablist">
@@ -674,22 +688,55 @@ elem.addEventListener("click", e => {
                             <li role="presentation"><a href="#profile8" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div role="tabpane" class="tab-pane active" id="home8"><pre class="line-numbers language-js"><code></code></pre></div>
-                            <div role="tabpane" class="tab-pane" id="profile7"><pre class="line-numbers language-js"><code></code></pre></div>
+                            <div role="tabpane" class="tab-pane active" id="home8"><pre class="line-numbers language-js"><code>$(window).scroll(function(){
+let scrollTop = $(window).scrollTop();
+// if(scrollTop > $("#section2").offset().top){
+//     $("#section2").addClass("show");
+// }
+$(".reveal").each(function(){
+    if( scrollTop + $(window).height()/2 > $(this).offset().top){
+        $(this).addClass("show");
+    }
+});
+});</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile8"><pre class="line-numbers language-js"><code>function scrollReveal(){
+const reveal = document.querySelectorAll(".reveal");
+reveal.forEach(elem => {
+    let scrollTop = document.documentElement.scrollTop +window.innerHeight/2;
+    let offsetTop = elem.offsetTop + elem.parentElement.offsetTop;
+    // console.log(el.offsetTop);
+
+    if(scrollTop > offsetTop){
+        elem.classList.add("show");
+    }
+})
+}
+window.addEventListener("scroll", scrollReveal)</code></pre></div>
                         </div>
                     </div>
                 </div>
                 <!-- //Intro8 -->
-                
-                <!-- figma -->
+                <!-- Intro9 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro3" class="page-header">figma</h2>                   
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">확인하기</a></p>
-                    <div class="iframe">
-                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FXFkI03xRW1mpPeKgBKeK6U%2Fscript%3Fnode-id%3D118%253A33" allowfullscreen></iframe>
-                    </div>                        
+                    <h2 id="intro9" class="page-header">parallax-apple</h2>
+                    <p class="bs-callout bs-callout-info">data값을 이용해서 animation효과를 나타냈습니다.</p>
+                    <iframe src="parallax-apple.html" width="100%" height="800px" frameborder="0"></iframe>
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home9" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile9" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpane" class="tab-pane active" id="home9"><pre class="line-numbers language-js"><code>var s = skrollr.init();
+$(window).scroll(function(){
+    let scrollTop = $(window).scrollTop();
+    $(".scroll").text(scrollTop);
+});</code></pre></div>
+                            <div role="tabpane" class="tab-pane" id="profile9"><pre class="line-numbers language-js"><code></code></pre></div>
+                        </div>
+                    </div>
                 </div>
-                <!-- //figma -->
+                <!-- //Intro8 -->
         </div>
         <!-- //col-md-9 -->       
     </div>
