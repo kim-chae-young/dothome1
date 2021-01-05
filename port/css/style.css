@@ -256,7 +256,14 @@ body {background-color: #fffbf4; height: 20000px;}
     position: relative;
     overflow: hidden;
 }
-.site .Textwrap {}
+.repon-site {
+    position: relative;
+}
+.repon-site img {
+    position: absolute;
+    left: 8%; top: -49%;
+    width: 1185px; height: 741px;
+}
 .site .Textwrap .site-desc {
     font-family: 'S-CoreDream-3Light';
     font-size: 14px;
@@ -283,13 +290,30 @@ body {background-color: #fffbf4; height: 20000px;}
     width: 876px; height: 448px;
     margin: 0 9vw 3vh 10vw;
 }
+.repon-site .repon-bg {
+    background: #f4edd9;
+    width: 876px; height: 448px;
+    margin: 13% 9vw 3vh 10vw;
+}
 .site .imgwrap img {
     position: absolute;
     left: 23%; top: 40%;
     width: 621px; height: 503px;
 }
-.site .ex {}
+.site .imgwrap img {
+    position: absolute;
+    left: 23%; top: 41%;
+    width: 621px; height: 503px;
+}
 .site .ex .standex {
+    font-size: 40px;
+    line-height: 1.59;
+    font-family : 'Chosunilbo_myungjo';
+    margin: 0vh 0 5vh 14.5%;
+    display: inline;
+    color: #656565;
+}
+.ex .standex {
     font-size: 40px;
     line-height: 1.59;
     font-family : 'Chosunilbo_myungjo';
@@ -307,12 +331,30 @@ body {background-color: #fffbf4; height: 20000px;}
     font-weight: 100;
     font-size: 14px;
 }
+.ex .figma {
+    font-family: 'S-CoreDream-3Light';
+    display: inline;
+    margin: 0 0px 10px 15px;
+    padding-bottom: 0px;
+    width: 45px;
+    border-bottom: 1px solid #656565;
+    font-weight: 100;
+    font-size: 14px;
+}
 .site .ex .bg {
     background: url(../img/화살표1.png) no-repeat;
     width: 10px; height: 9px;
     display: inline-block;
 }
+.ex .bg {
+    background: url(../img/화살표1.png) no-repeat;
+    width: 10px; height: 9px;
+    display: inline-block;
+}
 .site .ex .figma a {
+    color: #656565;
+}
+.ex .figma a {
     color: #656565;
 }
 .site .ex .site2 {
@@ -323,10 +365,31 @@ body {background-color: #fffbf4; height: 20000px;}
     border-bottom: 1px solid #656565;
     font-size: 14px;
 }
+.ex .site2 {
+    font-family: 'S-CoreDream-3Light';
+    display: inline;
+    width: 29px;
+/*    padding-bottom: 5px;*/
+    border-bottom: 1px solid #656565;
+    font-size: 14px;
+}
+.ex .site2 a {
+    color: #656565;
+}
 .site .ex .site2 a {
     color: #656565;
 }
 .site .ex .text {
+    font-family: 'S-CoreDream-3Light';
+    width: 737px;
+    font-size: 20px;
+    color: #656565;
+    line-height: 1.59;
+    margin: 2vh 0 0 14.5%;
+    padding-bottom: 130px;
+    border-bottom: 1px solid #e0dcd6;
+}
+.ex .text {
     font-family: 'S-CoreDream-3Light';
     width: 737px;
     font-size: 20px;
@@ -399,7 +462,7 @@ body {background-color: #fffbf4; height: 20000px;}
 }
 .script .button .si a {
     color: #5a4d42;
-    padding: 10px 62px;
+    padding: 10px 55px;
     border: 1px solid #5a4d42;
     border-radius: 2px;
 }
