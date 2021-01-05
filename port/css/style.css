@@ -62,7 +62,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-family: 'Chosunilbo_myungjo';   
 }
 #Main h1 {
-    background-image:url(../img/main.jpg); 
+    background-image:url(../img/main@2.jpg); 
     width: 100%; height: 412px;
     background-position: center center;
 }
@@ -171,6 +171,7 @@ body {background-color: #fffbf4; height: 20000px;}
     position: relative;
     margin-left: auto;
     margin-right: 0;
+    margin-top: 18vw;
 }
 .websta {
 }
@@ -216,9 +217,9 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     letter-spacing: 0.8px;
     color: #fff;
-    width: 5460px;
+    width: 560px;
     margin-left: auto;
-    padding: 2% 27% 0 27%;
+    padding: 2% 25% 0 0%;
 }
 .websta .textwrap .button {
     font-family: 'S-CoreDream-3Light';
@@ -235,6 +236,7 @@ body {background-color: #fffbf4; height: 20000px;}
     padding: 10px 55px;
     border: 1px solid #fff;
     border-radius: 2px;
+    width: 45px;
 }
 .websta .textwrap .button .si {
     width: 149px;
@@ -244,10 +246,11 @@ body {background-color: #fffbf4; height: 20000px;}
 .websta .textwrap .button .si a {
     color: #fff;
     border: 1px solid #fff;
-    padding: 10px 55px;
+    padding: 10px 62px;
     border-radius: 2px;
+    width: 45px;
 }
-.websta .web-text em {color: #7bf5a4;}
+.websta .web-text em {color: #41BFA9;}
 
 .site {
     position: relative;
@@ -282,26 +285,32 @@ body {background-color: #fffbf4; height: 20000px;}
 }
 .site .imgwrap img {
     position: absolute;
-    left: 23%; top: 35%;
+    left: 23%; top: 40%;
+    width: 621px; height: 503px;
 }
 .site .ex {}
 .site .ex .standex {
     font-size: 40px;
     line-height: 1.59;
     font-family : 'Chosunilbo_myungjo';
-    margin: 0vh 0 5vh 14%;
+    margin: 0vh 0 5vh 14.5%;
     display: inline;
     color: #656565;
 }
 .site .ex .figma {
     font-family: 'S-CoreDream-3Light';
     display: inline;
-    margin: 0 30px 10px 15px;
+    margin: 0 0px 10px 15px;
     padding-bottom: 0px;
     width: 45px;
     border-bottom: 1px solid #656565;
     font-weight: 100;
     font-size: 14px;
+}
+.site .ex .bg {
+    background: url(../img/화살표1.png) no-repeat;
+    width: 10px; height: 9px;
+    display: inline-block;
 }
 .site .ex .figma a {
     color: #656565;
@@ -323,7 +332,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 14%;
+    margin: 2vh 0 0 14.5%;
     padding-bottom: 130px;
     border-bottom: 1px solid #e0dcd6;
 }
@@ -368,7 +377,7 @@ body {background-color: #fffbf4; height: 20000px;}
     padding-top: 60px;
 }
 .script .script-text em {
-    color: #e330bc;
+    color: #BA710C;
 }
 
 .script .button{
@@ -390,7 +399,7 @@ body {background-color: #fffbf4; height: 20000px;}
 }
 .script .button .si a {
     color: #5a4d42;
-    padding: 10px 55px;
+    padding: 10px 62px;
     border: 1px solid #5a4d42;
     border-radius: 2px;
 }
