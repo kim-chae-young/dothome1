@@ -223,7 +223,7 @@
 	font-family: 'Gaegu', cursive; font-size: 40px;
 }
 #contents_tit p a {
-	color:#FDDFE3; 
+	color:#db4f61; 
 }
 
 
@@ -2043,11 +2043,3 @@
 /* control */
 .control {}
 .control h3 {margin-top:30px;}
-
-
-
-
-
-
-
-
