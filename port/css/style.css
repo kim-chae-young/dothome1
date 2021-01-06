@@ -269,12 +269,12 @@ body {background-color: #fffbf4; height: 20000px;}
 .repon-site .megaimg {
     width: 845px; height: 521px;
     position: absolute;
-    left: 15%; top: -36%;
+    left: 18%; top: -36%;
 }
 .repon-site .naverimg {
-    width: 931px; height: 737px;
+    width: 845px; height: 521px;
     position: absolute;
-    left: 6%; top: -24%;
+    left: 18%; top: -36%;
 }
 .site .Textwrap .site-desc {
     font-family: 'S-CoreDream-3Light';
@@ -300,28 +300,23 @@ body {background-color: #fffbf4; height: 20000px;}
 .site .imgwrap h1 {
     background: #f4edd9;
     width: 876px; height: 448px;
-    margin: 0 9vw 3vh 10vw;
+    margin: 0 9vw 3vh 224px;
 }
 .repon-site .repon-bg {
     background: #f4edd9;
     width: 876px; height: 448px;
-    margin: 13% 9vw 3vh 10vw;
+    margin: 13% 9vw 3vh 224px;
 }
 .site .imgwrap img {
     position: absolute;
-    left: 23%; top: 40%;
-    width: 621px; height: 503px;
-}
-.site .imgwrap img {
-    position: absolute;
-    left: 23%; top: 41%;
+    left: 26%; top: 40%;
     width: 621px; height: 503px;
 }
 .site .ex .standex {
     font-size: 40px;
     line-height: 1.59;
     font-family : 'Chosunilbo_myungjo';
-    margin: 0vh 0 5vh 190.5px;
+    margin: 0vh 0 5vh 219.5px;
     display: inline;
     color: #656565;
 }
@@ -329,7 +324,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 40px;
     line-height: 1.59;
     font-family : 'Chosunilbo_myungjo';
-    margin: 0vh 0 5vh 14.5%;
+    margin: 0vh 0 5vh 219.5px;
     display: inline;
     color: #656565;
 }
@@ -343,24 +338,27 @@ body {background-color: #fffbf4; height: 20000px;}
     font-weight: 100;
     font-size: 14px;
 }
+.site .ex .figma::after {
+    content: '';
+    background: url(../img/bg.png) no-repeat;
+    width: 10px; height: 10px;
+    display: inline-block;
+    border-bottom: 0;
+}
 .ex .figma {
     font-family: 'S-CoreDream-3Light';
     display: inline;
-    margin: 0 0px 10px 15px;
+    margin: 0 5px 10px 15px;
     padding-bottom: 0px;
     width: 45px;
     border-bottom: 1px solid #656565;
     font-weight: 100;
     font-size: 14px;
 }
-.site .ex .bg {
-    background: url(../img/화살표1.png) no-repeat;
-    width: 10px; height: 9px;
-    display: inline-block;
-}
-.ex .bg {
-    background: url(../img/화살표1.png) no-repeat;
-    width: 10px; height: 9px;
+.ex .figma::after {
+    content: '';
+    width: 6px; height: 10px;
+    background: url(../img/bg.png) no-repeat;
     display: inline-block;
 }
 .site .ex .figma a {
@@ -368,6 +366,7 @@ body {background-color: #fffbf4; height: 20000px;}
 }
 .ex .figma a {
     color: #656565;
+    margin-right: 5px;
 }
 .site .ex .site2 {
     font-family: 'S-CoreDream-3Light';
@@ -377,6 +376,12 @@ body {background-color: #fffbf4; height: 20000px;}
     border-bottom: 1px solid #656565;
     font-size: 14px;
 }
+.site .ex .site2::after {
+    content: '';
+    width: 6px; height: 10px;
+    background: url(../img/bg.png) no-repeat;
+    display: inline-block;
+}
 .ex .site2 {
     font-family: 'S-CoreDream-3Light';
     display: inline;
@@ -385,12 +390,21 @@ body {background-color: #fffbf4; height: 20000px;}
     border-bottom: 1px solid #656565;
     font-size: 14px;
 }
+.ex .site2::after {
+    content: '';
+    width: 6px; height: 10px;
+    background: url(../img/bg.png) no-repeat;
+    display: inline-block;
+}
 .ex .site2:nth-child(2) {margin-left: 10px;}
 .ex .site2 a {
     color: #656565;
+    margin-right: 5px;
 }
 .site .ex .site2 a {
     color: #656565;
+    margin-right: 5px;
+
 }
 .site .ex .text {
     font-family: 'S-CoreDream-3Light';
@@ -398,7 +412,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 14.5%;
+    margin: 2vh 0 0 219.5px;
     padding-bottom: 130px;
     border-bottom: 1px solid #e0dcd6;
 }
@@ -408,7 +422,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 14.5%;
+    margin: 2vh 0 0 219.5px;
     padding-bottom: 130px;
     border-bottom: 1px solid #e0dcd6;
 }
@@ -505,7 +519,7 @@ body {background-color: #fffbf4; height: 20000px;}
     margin-bottom: 155px;
 }
 .site .scriptwrap iframe {
-    margin: 0 0 30px 19%;
+    margin: 0 0 30px 224px;
     position: relative;
 }
 .mousewrap {
@@ -544,7 +558,7 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     color: #656565;
     font-family : 'Chosunilbo_myungjo';
-    margin: 0vh 0 5vh 19%;
+    margin: 0vh 0 5vh 219.5px;
 /*    margin-left: 200px;*/
     display: inline;
 }
@@ -560,27 +574,41 @@ body {background-color: #fffbf4; height: 20000px;}
 .site .ex .code {
     font-family: 'S-CoreDream-3Light';
     display: inline;
-    margin: 0 0px 10px 15px;
+    margin: 0 5px 10px 15px;
     padding-bottom: 0px;
     width: 39px;
     border-bottom: 1px solid #656565;
     font-weight: 100;
     font-size: 14px;
+}
+.site .ex .code::after {
+    content: '';
+    background: url(../img/bg.png);
+    width: 6px; height: 9px; 
+    display: inline-block;
 }
 .ex .code {
     font-family: 'S-CoreDream-3Light';
     display: inline;
-    margin: 0 0px 10px 15px;
+    margin: 0 5px 10px 15px;
     padding-bottom: 0px;
     width: 39px;
     border-bottom: 1px solid #656565;
     font-weight: 100;
     font-size: 14px;
 }
+.ex .code::after {
+    content: '';
+    background: url(../img/bg.png);
+    width: 6px; height: 9px; 
+    display: inline-block;
+}
 .site .ex .code a {
     color: #656565;
+    margin-right: 5px;
 }
 .ex .code a {
+    margin-right: 5px;
     color: #656565;
 }
 .site .ex .effecttext {
@@ -589,7 +617,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 19%;
+    margin: 2vh 0 0 219.5px;
     padding-bottom: 130px;
     border-bottom: 1px solid #e0dcd6;
 }
@@ -676,9 +704,9 @@ body {background-color: #fffbf4; height: 20000px;}
     border-radius: 2px;
     color: #fff;
 }
-.ani .web-text em {color: #ff4a8b;}
+.ani .web-text em {color: #FFA9B8;}
 .site .aniwrap iframe {
-    margin: 0 0 30px 15%;
+    margin: 0 0 30px 16.5%;
     position: relative;
     display: inline;
     width:50%;
@@ -689,7 +717,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 15%;
+    margin: 2vh 0 0 221.5px;
     padding-bottom: 130px;
 }
 .ani-site {}
