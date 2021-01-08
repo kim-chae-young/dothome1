@@ -60,8 +60,9 @@ body {background-color: #fffbf4; height: 20000px;}
     text-align: center;
     font-size: 20px;
     line-height: 1.59;
-    margin: 0px 23% 20vh;
+    margin: 0px 22% 20vh;
     font-family: 'Chosunilbo_myungjo';   
+    letter-spacing: 1px;
 }
 #Main h1 {
     background-image:url(../img/main@2.jpg); 
@@ -87,12 +88,74 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     color: #353535;
 }
-.About img {
-    width: 537px; 
-    height: 537px; 
+.carousel {
+  position: relative;
+  z-index: 1;
+  width: var(--size);
+  height: var(--size);
+}
+.carousel--play {
+    font-family: 'S-CoreDream-3Light';
+    /* position: absolute; */
+    z-index: 10;
+    bottom: calc(10% * var(--scaleBtn));
+    left: calc(10% * var(--scaleBtn));
+    transform: rotate(-20deg) scale(var(--scaleBtn));
+    transition: transform 0.2s var(--ease);
+    width: 120px;
+    height: 120px;
+    background: #7ec96a;
+    box-shadow: 0 10px 20px -6px #7ec96a;
     border-radius: 50%;
-    padding-top: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+}
+.carousel--play:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: scale(1.2);
+    transition: transform 0.4s var(--ease);
+}
+.carousel--play:hover:before {
+  transform: scale(1);
+}
+.carousel--play:active {
+  transform: scale(calc(var(--scaleBtn) * .9)) rotate(-5deg);
+}
+.carousel {
+    position: relative;
     display: inline-block;
+}
+.carousel img {
+    width: 500px; 
+    height: 500px; 
+    border-radius: 50%;
+    margin-top: 80px;
+    /* display: flex;
+    position: relative; */
+    z-index: 1000;
+}
+.carousel img:nth-child(2) {
+    position: absolute;
+    left: 0; top: 0px;
+    z-index: -1;
+}
+.carousel img:nth-child(3) {
+    position: absolute;
+    left: 0; top: 0px;
+    z-index: -2;
 }
 .About .aboutdesc {
     display: inline-block;
@@ -104,7 +167,7 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     text-align: justify;
     float: right;
-    padding-top: 2vh;
+    padding-top: 80px;
 }
 
 /*skill*/
@@ -263,18 +326,18 @@ body {background-color: #fffbf4; height: 20000px;}
 }
 .repon-site img {
     position: absolute;
-    left: 8%; top: -49%;
-    width: 1185px; height: 741px;
+    left: 21%; bottom: 19%;
+    width: 792px; height: 488px;
 }
 .repon-site .megaimg {
-    width: 845px; height: 521px;
+    width: 1453px; height: 902px;
     position: absolute;
-    left: 18%; top: -36%;
+    left: -109px; bottom: -41%;
 }
 .repon-site .naverimg {
-    width: 845px; height: 521px;
-    position: absolute;
-    left: 18%; top: -36%;
+    width: 1453px; height: 902px;
+    position: absolute;    
+    left: -109px; bottom: -41%;
 }
 .site .Textwrap .site-desc {
     font-family: 'S-CoreDream-3Light';
@@ -414,7 +477,10 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     margin: 2vh 0 0 219.5px;
     padding-bottom: 130px;
-    border-bottom: 1px solid #e0dcd6;
+    border-bottom: 3px solid #e0dcd6;
+}
+.site .ex .text.active {
+    border-bottom: 3px solid #e0dcd6;
 }
 .ex .text {
     font-family: 'S-CoreDream-3Light';
@@ -518,41 +584,54 @@ body {background-color: #fffbf4; height: 20000px;}
     color: #656565;
     margin-bottom: 155px;
 }
-.site .scriptwrap iframe {
-    margin: 0 0 30px 224px;
-    position: relative;
-}
+.scriptwrap {position: relative;}
+.site .scriptwrap iframe {margin: 0 0 30px 224px;}
 .mousewrap {
     position: relative;
 }
+.mousewrap::after {
+    content: '';
+    width: 900px; height: 494px;
+    opacity: 0.4;
+    background: #2B2110;
+    position: absolute;
+    left: 224px; bottom: 34px;
+}
+.mousewrap::after.active {display: none;}
+.mousewrap .play.active {
+    display: none;
+
+}
 .mousewrap iframe {
-    margin: 0 0 30px 19%;
+    margin: 0 0 30px 224px;
     margin-top: 10%;
 }
-.site .scriptwrap iframe::after {
-    content: '';
-    width: 877px; height: 540px;
-    background: #2B2110;
+.mousewrap .play {
+    position: absolute;
+    left: 50%; top: 57%;
+    transform: translate(-50%,-50%);
     z-index: 1000;
+    transition: all 0.6s;
+}
+.mousewrap .play .circle {fill: #F1E2CD;}
+.mousewrap .play .triangle {fill: #120F0B;}
+.site .scriptwrap::after {
+    content: '';
+    width: 900px; height: 494px;
+    opacity: 0.4;
+    background: #2B2110;
+    position: absolute;
+    left: 224px; top: 0;
 }
 .site .scriptwrap .play {
-    background: #f1e2cd;
-    border-radius: 50%;
-    text-align: center;
-    width: 110px; height: 110px;
-    line-height: 100px;
     position: absolute;
-    left: 49%; bottom: 37%;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
 }
-.mousewrap .play {
-    background: #f1e2cd;
-    border-radius: 50%;
-    text-align: center;
-    width: 110px; height: 110px;
-    line-height: 100px;
-    position: absolute;
-    left: 49%; bottom: 37%;
-}
+.site .scriptwrap .play .circle {fill: #F1E2CD;}
+.site .scriptwrap .play .triangle {fill: #120F0B;}
+
 .site .ex .effect {
     font-size: 40px;
     line-height: 1.59;
@@ -567,7 +646,7 @@ body {background-color: #fffbf4; height: 20000px;}
     line-height: 1.59;
     color: #656565;
     font-family : 'Chosunilbo_myungjo';
-    margin: 0vh 0 5vh 19%;
+    margin: 0vh 0 5vh 219.5px;
 /*    margin-left: 200px;*/
     display: inline;
 }
@@ -627,7 +706,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 19%;
+    margin: 2vh 0 0 224px;
     padding-bottom: 130px;
     border-bottom: 1px solid #e0dcd6;
 }
@@ -705,11 +784,11 @@ body {background-color: #fffbf4; height: 20000px;}
     color: #fff;
 }
 .ani .web-text em {color: #FFA9B8;}
+.site .aniwrap {float: left; width: 48%; margin-right: 17px;}
 .site .aniwrap iframe {
-    margin: 0 0 30px 16.5%;
+    margin: 0 0 30px 224px;
     position: relative;
-    display: inline;
-    width:50%;
+    width:100%;
 }
 .site .ex .anitext {
     font-family: 'S-CoreDream-3Light';
@@ -717,7 +796,7 @@ body {background-color: #fffbf4; height: 20000px;}
     font-size: 20px;
     color: #656565;
     line-height: 1.59;
-    margin: 2vh 0 0 221.5px;
+    margin: 2vh 0 0 224px;
     padding-bottom: 130px;
 }
 .ani-site {}
